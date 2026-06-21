@@ -136,3 +136,28 @@ Each entry: what, why, scope (global value preserved?), bug-report relevance.
   seat daemon). This is the musl-idiomatic seat-management path and keeps PipeWire/Wayland intact.
 - Global `elogind` USE remains (target intent); per-package -elogind only where elogind would be
   pulled into the build. Reportable alongside E14.
+
+## E1-UPDATE. Switched to FULL LTO (-flto) per user request
+- COMMON_FLAGS now uses `-flto` (full LTO) instead of `-flto=thin`. Applying it requires
+  `emerge -e @world` (emptytree) since LTO is a CFLAG, not USE-tracked.
+- Full-LTO @world rebuild run with FEATURES=-test (command-scoped, E11/E12) to avoid the
+  test-dep X11 cascade. Breakage captured with --keep-going.
+
+## E16. Hardening/optimization escalation (more painful flags) — user request
+- After the full-LTO base, escalated COMMON_FLAGS: -O2->-O3, plus -fstack-clash-protection,
+  -fcf-protection=full (CET IBT+shadow stack; verified endbr64 emitted), -ftrivial-auto-var-init=zero,
+  -fzero-call-used-regs=used-gpr. LDFLAGS += -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe.
+  All validated to compile+run on musl/clang21->22 + LTO before bulk rebuild.
+- Applied via `emerge -e @world` (CFLAG change needs emptytree). Command-scoped FEATURES=-test to
+  avoid the X11 test cascade (E11); global make.conf FEATURES keeps test. --keep-going.
+
+## E17. net-tools ROSE disabled (kernel-7.1 UAPI lacks linux/rose.h) — FIXED
+- sys-apps/net-tools-2.10 lib/rose.c does `#include <linux/rose.h>` inside `#if HAVE_AFROSE`,
+  and config.in defaults HAVE_AFROSE/HAVE_HWROSE to 'y'. kernel-7.1 UAPI does NOT ship
+  linux/rose.h (only ax25.h) -> compile fails. (musl-independent; a net-tools vs kernel gap.)
+- Fix: /etc/portage/bashrc post_src_prepare hook sets HAVE_AFROSE/HAVE_HWROSE to 'n' in config.in
+  for sys-apps/net-tools, so rose.c compiles as a stub. net-tools then builds fully (with the
+  hardening flags; CET endbr verified in netstat). ROSE is ham-radio AX.25 — no functional loss;
+  iproute2 is the actual networking tool.
+- Reportable: net-tools-2.10 unconditionally needs linux/rose.h which newer kernels omit; ebuild
+  has no USE/toggle to disable ROSE.

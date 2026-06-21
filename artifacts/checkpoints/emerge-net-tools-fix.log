@@ -1,0 +1,453 @@
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+
+These are the packages that would be merged, in order:
+
+Calculating dependencies  ... done!
+Dependency resolution took 1.97 s (backtrack: 0/20).
+
+[ebuild   R    ] sys-apps/net-tools-2.10::gentoo  USE="arp hostname ipv6 nls selinux* -nis -plipconfig -slattach -static" 0 KiB
+
+Total: 1 package (1 reinstall), Size of downloads: 0 KiB
+
+
+>>> Verifying ebuild manifests
+
+>>> Emerging (1 of 1) sys-apps/net-tools-2.10::gentoo
+ * net-tools-2.10.tar.xz BLAKE2B SHA512 size ;-) ...                     [ ok ]
+>>> Unpacking source...
+>>> Unpacking 'net-tools-2.10.tar.xz' to /var/tmp/portage/sys-apps/net-tools-2.10/work
+>>> Source unpacked in /var/tmp/portage/sys-apps/net-tools-2.10/work
+>>> Preparing source in /var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10 ...
+>>> Source prepared.
+ [32m*[0m QA(E17): disabling ROSE (HAVE_AFROSE/HAVE_HWROSE) — kernel lacks linux/rose.h
+>>> Configuring source in /var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10 ...
+ [32m*[0m Setting option I18N to y
+ [32m*[0m Setting option HAVE_AFINET6 to y
+ [32m*[0m Setting option HAVE_HWIB to y
+ [32m*[0m Setting option HAVE_HWTR to n
+ [32m*[0m Setting option HAVE_HWSTRIP to n
+ [32m*[0m Setting option HAVE_SELINUX to y
+ [32m*[0m Setting option HAVE_ARP_TOOLS to y
+ [32m*[0m Setting option HAVE_HOSTNAME_TOOLS to y
+ [32m*[0m Setting option HAVE_HOSTNAME_SYMLINKS to n
+ [32m*[0m Setting option HAVE_PLIP_TOOLS to n
+ [32m*[0m Setting option HAVE_SERIAL_TOOLS to n
+
+######################################################
+Notice: ifconfig and route are now installed into /bin
+######################################################
+
+*
+*
+*              Internationalization
+*
+* The net-tools package has currently been translated to French,
+* German and Brazilian Portugese.  Other translations are, of
+* course, welcome.  Answer `n' here if you have no support for
+* internationalization on your system.
+*
+Does your system support GNU gettext? (I18N) [y] *
+*
+*             Protocol Families.
+*
+UNIX protocol family (HAVE_AFUNIX) [y] INET (TCP/IP) protocol family (HAVE_AFINET) [y] INET6 (IPv6) protocol family (HAVE_AFINET6) [y] Novell IPX/SPX protocol family (HAVE_AFIPX) [y] Appletalk DDP protocol family (HAVE_AFATALK) [y] AX25 (packet radio) protocol family (HAVE_AFAX25) [y] NET/ROM (packet radio) protocol family (HAVE_AFNETROM) [y] Rose (packet radio) protocol family (HAVE_AFROSE) [n] X.25 (CCITT) protocol family (HAVE_AFX25) [y] Econet protocol family (HAVE_AFECONET) [n] DECnet protocol family (HAVE_AFDECnet) [n] Ash protocol family (HAVE_AFASH) [y] Bluetooth protocol family (HAVE_AFBLUETOOTH) [n] *
+*
+*            Device Hardware types.
+*
+Ethernet (generic) support (HAVE_HWETHER) [y] ARCnet support (HAVE_HWARC) [y] SLIP (serial line) support (HAVE_HWSLIP) [y] PPP (serial line) support (HAVE_HWPPP) [y] IPIP Tunnel support (HAVE_HWTUNNEL) [y] STRIP (Metricom radio) support (HAVE_HWSTRIP) [n] Token ring (generic) support (HAVE_HWTR) [n] AX25 (packet radio) support (HAVE_HWAX25) [y] Rose (packet radio) support (HAVE_HWROSE) [n] NET/ROM (packet radio) support (HAVE_HWNETROM) [y] X.25 (generic) support (HAVE_HWX25) [y] DLCI/FRAD (frame relay) support (HAVE_HWFR) [y] SIT (IPv6-in-IPv4) support (HAVE_HWSIT) [y] FDDI (generic) support (HAVE_HWFDDI) [y] HIPPI (generic) support (HAVE_HWHIPPI) [y] Ash hardware support (HAVE_HWASH) [y] (Cisco)-HDLC/LAPB support (HAVE_HWHDLCLAPB) [y] IrDA support (HAVE_HWIRDA) [y] Econet hardware support (HAVE_HWEC) [n] Generic EUI-64 hardware support (HAVE_HWEUI64) [y] InfiniBand hardware support (HAVE_HWIB) [y] *
+*
+*           Other Features.
+*
+IP Masquerading support (HAVE_FW_MASQUERADE) [y] Build arp and rarp (HAVE_ARP_TOOLS) [y] Build hostname (HAVE_HOSTNAME_TOOLS) [y] Install hostname NIS/YP symlinks (HAVE_HOSTNAME_SYMLINKS) [n] Build iptunnel and ipmaddr (HAVE_IP_TOOLS) [y] Build mii-tool (HAVE_MII) [y] Build plipconfig (HAVE_PLIP_TOOLS) [n] Build slattach (HAVE_SERIAL_TOOLS) [n] SELinux support (HAVE_SELINUX) [y] >>> Source configured.
+>>> Compiling source in /var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10 ...
+make -j8 -l12 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c ifconfig.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c netstat.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c statistics.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c route.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c nameif.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c arp.c
+make[1]: Entering directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/lib'
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o activate.o activate.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c rarp.c
+rarp.c:209:45: warning: variable 'verbose' set but not used
+      [-Wunused-but-set-variable]
+  209 |     int result = 0, mode = 0, c, nargs = 0, verbose = 0;
+      |                                             ^
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o af.o af.c
+netstat.c:408:5: warning: 'security_context_t' is deprecated
+      [-Wdeprecated-declarations]
+  408 |     security_context_t scon = NULL;
+      |     ^
+/usr/include/selinux/selinux.h:21:17: note: 'security_context_t' has been
+      explicitly marked deprecated here
+   21 | __attribute__ ((deprecated))
+      |                 ^
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c hostname.c
+1 warning generated.
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c iptunnel.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o arcnet.o arcnet.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c ipmaddr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ash.o ash.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib -c mii-tool.c
+ash.c:43:37: warning: result of comparison of constant 255 with expression of
+      type 'const char' is always true
+      [-Wtautological-constant-out-of-range-compare]
+   43 |     while (ptr[i] != 0xc9 && ptr[i] != 0xff && (i < ASH_ALEN))
+      |                              ~~~~~~ ^  ~~~~
+ash.c:43:19: warning: result of comparison of constant 201 with expression of
+      type 'const char' is always true
+      [-Wtautological-constant-out-of-range-compare]
+   43 |     while (ptr[i] != 0xc9 && ptr[i] != 0xff && (i < ASH_ALEN))
+      |            ~~~~~~ ^  ~~~~
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ax25.o ax25.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ax25_gr.o ax25_gr.c
+2 warnings generated.
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ddp.o ddp.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o hostname hostname.o  
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ddp_gr.o ddp_gr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ec_hw.o ec_hw.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o econet.o econet.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ether.o ether.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o eui64.o eui64.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o fddi.o fddi.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o frame.o frame.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o getargs.o getargs.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o getroute.o getroute.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o hdlclapb.o hdlclapb.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o hippi.o hippi.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o hw.o hw.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ib.o ib.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o inet.o inet.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o inet6.o inet6.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o inet6_gr.o inet6_gr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o inet6_sr.o inet6_sr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o inet_gr.o inet_gr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o inet_sr.o inet_sr.c
+1 warning generated.
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o interface.o interface.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ipx.o ipx.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ipx_gr.o ipx_gr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ipx_sr.o ipx_sr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o irda.o irda.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o loopback.o loopback.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o masq_info.o masq_info.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o netrom.o netrom.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o netrom_gr.o netrom_gr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o netrom_sr.o netrom_sr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o nstrcmp.o nstrcmp.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ppp.o ppp.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o ppp_ac.o ppp_ac.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o proc.o proc.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o rose.o rose.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o rose_gr.o rose_gr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o setroute.o setroute.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o sit.o sit.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o slip.o slip.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o slip_ac.o slip_ac.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o sockets.o sockets.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o strip.o strip.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o tr.o tr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o tunnel.o tunnel.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o unix.o unix.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o util-ank.o util-ank.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o util.o util.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o x25.o x25.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o x25_gr.o x25_gr.c
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -I.. -I../include  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE  -I. -I/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/include -Ilib  -c -o x25_sr.o x25_sr.c
+x25_sr.c:100:2: warning: misleading indentation; statement is not part of the
+      previous 'if' [-Wmisleading-indentation]
+  100 |         if (rt.sigdigits > 15) {
+      |         ^
+x25_sr.c:96:3: note: previous statement is here
+   96 |   if (rt.device[0]=='\0')
+      |   ^
+1 warning generated.
+Building libnet-tools.a
+make[1]: Leaving directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/lib'
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o ifconfig ifconfig.o -lnet-tools 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o netstat netstat.o statistics.o -lnet-tools -lselinux 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o route route.o -lnet-tools 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o nameif nameif.o -lnet-tools 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o arp arp.o -lnet-tools 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o rarp rarp.o -lnet-tools 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o iptunnel iptunnel.o -lnet-tools 
+make[1]: Entering directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/man'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/man'
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o ipmaddr ipmaddr.o -lnet-tools 
+clang -march=x86-64-v3 -O3 -pipe -fstack-protector-strong -fno-semantic-interposition -flto -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fcf-protection=full -ftrivial-auto-var-init=zero -fzero-call-used-regs=used-gpr -Wall -fno-strict-aliasing  -Wl,-O1 -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -Wl,-z,separate-code -Wl,--icf=safe -Llib -o mii-tool mii-tool.o -lnet-tools 
+>>> Source compiled.
+>>> Test phase: sys-apps/net-tools-2.10
+>>> Completed testing sys-apps/net-tools-2.10
+
+>>> Install sys-apps/net-tools-2.10 into /var/tmp/portage/sys-apps/net-tools-2.10/image
+make -j8 -l12 DESTDIR=/var/tmp/portage/sys-apps/net-tools-2.10/image install 
+make -C man install
+
+######################################################
+make[1]: Entering directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/man'
+LANGS='de_DE en_US fr_FR pt_BR' ; \
+	for LANG in $LANGS; do \
+		cd $LANG; \
+		for SECTION in 1 5 8; do \
+			if [ "$LANG" = "en_US" ] ; then \
+				MAN_DIR=/var/tmp/portage/sys-apps/net-tools-2.10/image/usr/share/man/man$SECTION; \
+			else \
+				MAN_DIR=/var/tmp/portage/sys-apps/net-tools-2.10/image/usr/share/man/$LANG/man$SECTION; \
+			fi ; \
+			install -d -m 755 $MAN_DIR; \
+			for CMD in *.$SECTION; do \
+				[ -e $CMD ] || continue; \
+				case $CMD in "" |domainname.?|nisdomainname.?|ypdomainname.? |nodename.? |plipconfig.? |slattach.?) continue;; esac; \
+				install -m 644 $CMD $MAN_DIR || exit 1; \
+			done; \
+		done; \
+		cd ..; \
+	done
+Notice: ifconfig and route are now installed into /bin
+make[1]: Entering directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/lib'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/lib'
+######################################################
+
+install -m 0755 -d /var/tmp/portage/sys-apps/net-tools-2.10/image/sbin
+make[1]: Entering directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/man'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/man'
+install -m 0755 -d /var/tmp/portage/sys-apps/net-tools-2.10/image/bin
+install -m 0755 ifconfig   /var/tmp/portage/sys-apps/net-tools-2.10/image/bin
+install -m 0755 nameif     /var/tmp/portage/sys-apps/net-tools-2.10/image/sbin
+install -m 0755 netstat    /var/tmp/portage/sys-apps/net-tools-2.10/image/bin
+install -m 0755 route      /var/tmp/portage/sys-apps/net-tools-2.10/image/bin
+install -m 0755 arp        /var/tmp/portage/sys-apps/net-tools-2.10/image/sbin
+install -m 0755 rarp       /var/tmp/portage/sys-apps/net-tools-2.10/image/sbin
+install -m 0755 hostname   /var/tmp/portage/sys-apps/net-tools-2.10/image/bin
+ln -fs hostname /var/tmp/portage/sys-apps/net-tools-2.10/image/bin/dnsdomainname
+install -m 0755 ipmaddr    /var/tmp/portage/sys-apps/net-tools-2.10/image/sbin
+install -m 0755 iptunnel   /var/tmp/portage/sys-apps/net-tools-2.10/image/sbin
+install -m 0755 mii-tool   /var/tmp/portage/sys-apps/net-tools-2.10/image/sbin
+make[1]: Leaving directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/man'
+make -C po install
+make[1]: Entering directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/po'
+langs='cs de et fr pt_BR'; \
+for l in $langs; do \
+    install -c -m 755 -d /var/tmp/portage/sys-apps/net-tools-2.10/image/usr/share/locale/$l; \
+    install -c -m 755 -d /var/tmp/portage/sys-apps/net-tools-2.10/image/usr/share/locale/$l/LC_MESSAGES; \
+    install -c -m 644 $l.mo /var/tmp/portage/sys-apps/net-tools-2.10/image/usr/share/locale/$l/LC_MESSAGES/net-tools.mo; \
+done
+make[1]: Leaving directory '/var/tmp/portage/sys-apps/net-tools-2.10/work/net-tools-2.10/po'
+>>> Completed installing sys-apps/net-tools-2.10 into /var/tmp/portage/sys-apps/net-tools-2.10/image
+
+ [32m*[0m Final size of build directory: 3556 KiB (3.4 MiB)
+ [32m*[0m Final size of installed tree:  1208 KiB (1.1 MiB)
+
+strip: x86_64-pc-linux-musl-strip --strip-unneeded -N __gentoo_check_ldflags__ -R .comment -R .GCC.command.line -R .note.gnu.gold-version
+   /sbin/nameif
+   /bin/ifconfig
+   /bin/netstat
+   /sbin/arp
+   /sbin/rarp
+   /bin/route
+   /sbin/ipmaddr
+   /bin/hostname
+   /sbin/mii-tool
+   /sbin/iptunnel
+stty: 'standard input': Not a tty
+>>> Done.
+
+>>> Installing (1 of 1) sys-apps/net-tools-2.10::gentoo
+ [32;01m*[39;49;00m checking 54 files for package collisions
+>>> Merging sys-apps/net-tools-2.10 to /
+--- /sbin/
+>>> /sbin/rarp
+>>> /sbin/mii-tool
+>>> /sbin/iptunnel
+>>> /sbin/arp
+>>> /sbin/ipmaddr
+>>> /sbin/nameif
+--- /usr/
+--- /usr/share/
+--- /usr/share/locale/
+--- /usr/share/locale/cs/
+--- /usr/share/locale/cs/LC_MESSAGES/
+=== /usr/share/locale/cs/LC_MESSAGES/net-tools.mo
+--- /usr/share/locale/fr/
+--- /usr/share/locale/fr/LC_MESSAGES/
+=== /usr/share/locale/fr/LC_MESSAGES/net-tools.mo
+--- /usr/share/locale/pt_BR/
+--- /usr/share/locale/pt_BR/LC_MESSAGES/
+=== /usr/share/locale/pt_BR/LC_MESSAGES/net-tools.mo
+--- /usr/share/locale/et/
+--- /usr/share/locale/et/LC_MESSAGES/
+=== /usr/share/locale/et/LC_MESSAGES/net-tools.mo
+--- /usr/share/locale/de/
+--- /usr/share/locale/de/LC_MESSAGES/
+=== /usr/share/locale/de/LC_MESSAGES/net-tools.mo
+--- /usr/share/man/
+--- /usr/share/man/de_DE/
+--- /usr/share/man/de_DE/man5/
+=== /usr/share/man/de_DE/man5/ethers.5.bz2
+--- /usr/share/man/de_DE/man8/
+=== /usr/share/man/de_DE/man8/ifconfig.8.bz2
+=== /usr/share/man/de_DE/man8/arp.8.bz2
+=== /usr/share/man/de_DE/man8/rarp.8.bz2
+=== /usr/share/man/de_DE/man8/route.8.bz2
+=== /usr/share/man/de_DE/man8/netstat.8.bz2
+--- /usr/share/man/de_DE/man1/
+=== /usr/share/man/de_DE/man1/hostname.1.bz2
+=== /usr/share/man/de_DE/man1/dnsdomainname.1
+--- /usr/share/man/man5/
+=== /usr/share/man/man5/ethers.5.bz2
+--- /usr/share/man/man8/
+=== /usr/share/man/man8/ifconfig.8.bz2
+=== /usr/share/man/man8/mii-tool.8.bz2
+=== /usr/share/man/man8/arp.8.bz2
+=== /usr/share/man/man8/rarp.8.bz2
+=== /usr/share/man/man8/nameif.8.bz2
+=== /usr/share/man/man8/ipmaddr.8.bz2
+=== /usr/share/man/man8/route.8.bz2
+=== /usr/share/man/man8/iptunnel.8.bz2
+=== /usr/share/man/man8/netstat.8.bz2
+--- /usr/share/man/pt_BR/
+--- /usr/share/man/pt_BR/man5/
+--- /usr/share/man/pt_BR/man8/
+=== /usr/share/man/pt_BR/man8/ifconfig.8.bz2
+=== /usr/share/man/pt_BR/man8/arp.8.bz2
+=== /usr/share/man/pt_BR/man8/rarp.8.bz2
+=== /usr/share/man/pt_BR/man8/route.8.bz2
+=== /usr/share/man/pt_BR/man8/netstat.8.bz2
+--- /usr/share/man/pt_BR/man1/
+=== /usr/share/man/pt_BR/man1/hostname.1.bz2
+=== /usr/share/man/pt_BR/man1/dnsdomainname.1
+--- /usr/share/man/man1/
+=== /usr/share/man/man1/hostname.1.bz2
+=== /usr/share/man/man1/dnsdomainname.1
+--- /usr/share/man/fr_FR/
+--- /usr/share/man/fr_FR/man5/
+=== /usr/share/man/fr_FR/man5/ethers.5.bz2
+--- /usr/share/man/fr_FR/man8/
+=== /usr/share/man/fr_FR/man8/ifconfig.8.bz2
+=== /usr/share/man/fr_FR/man8/arp.8.bz2
+=== /usr/share/man/fr_FR/man8/rarp.8.bz2
+=== /usr/share/man/fr_FR/man8/route.8.bz2
+=== /usr/share/man/fr_FR/man8/netstat.8.bz2
+--- /usr/share/man/fr_FR/man1/
+=== /usr/share/man/fr_FR/man1/hostname.1.bz2
+=== /usr/share/man/fr_FR/man1/dnsdomainname.1
+--- /usr/share/doc/
+--- /usr/share/doc/net-tools-2.10/
+=== /usr/share/doc/net-tools-2.10/THANKS.bz2
+=== /usr/share/doc/net-tools-2.10/README.bz2
+=== /usr/share/doc/net-tools-2.10/TODO.bz2
+--- /bin/
+>>> /bin/dnsdomainname -> hostname
+>>> /bin/netstat
+>>> /bin/route
+>>> /bin/hostname
+>>> /bin/ifconfig
+>>> Safely unmerging already-installed instance...
+--- replaced obj /usr/share/man/pt_BR/man8/route.8.bz2
+--- replaced obj /usr/share/man/pt_BR/man8/rarp.8.bz2
+--- replaced obj /usr/share/man/pt_BR/man8/netstat.8.bz2
+--- replaced obj /usr/share/man/pt_BR/man8/ifconfig.8.bz2
+--- replaced obj /usr/share/man/pt_BR/man8/arp.8.bz2
+--- replaced dir /usr/share/man/pt_BR/man8
+--- replaced dir /usr/share/man/pt_BR/man5
+--- replaced obj /usr/share/man/pt_BR/man1/hostname.1.bz2
+--- replaced obj /usr/share/man/pt_BR/man1/dnsdomainname.1
+--- replaced dir /usr/share/man/pt_BR/man1
+--- replaced dir /usr/share/man/pt_BR
+--- replaced obj /usr/share/man/man8/route.8.bz2
+--- replaced obj /usr/share/man/man8/rarp.8.bz2
+--- replaced obj /usr/share/man/man8/netstat.8.bz2
+--- replaced obj /usr/share/man/man8/nameif.8.bz2
+--- replaced obj /usr/share/man/man8/mii-tool.8.bz2
+--- replaced obj /usr/share/man/man8/iptunnel.8.bz2
+--- replaced obj /usr/share/man/man8/ipmaddr.8.bz2
+--- replaced obj /usr/share/man/man8/ifconfig.8.bz2
+--- replaced obj /usr/share/man/man8/arp.8.bz2
+--- replaced dir /usr/share/man/man8
+--- replaced obj /usr/share/man/man5/ethers.5.bz2
+--- replaced dir /usr/share/man/man5
+--- replaced obj /usr/share/man/man1/hostname.1.bz2
+--- replaced obj /usr/share/man/man1/dnsdomainname.1
+--- replaced dir /usr/share/man/man1
+--- replaced obj /usr/share/man/fr_FR/man8/route.8.bz2
+--- replaced obj /usr/share/man/fr_FR/man8/rarp.8.bz2
+--- replaced obj /usr/share/man/fr_FR/man8/netstat.8.bz2
+--- replaced obj /usr/share/man/fr_FR/man8/ifconfig.8.bz2
+--- replaced obj /usr/share/man/fr_FR/man8/arp.8.bz2
+--- replaced dir /usr/share/man/fr_FR/man8
+--- replaced obj /usr/share/man/fr_FR/man5/ethers.5.bz2
+--- replaced dir /usr/share/man/fr_FR/man5
+--- replaced obj /usr/share/man/fr_FR/man1/hostname.1.bz2
+--- replaced obj /usr/share/man/fr_FR/man1/dnsdomainname.1
+--- replaced dir /usr/share/man/fr_FR/man1
+--- replaced dir /usr/share/man/fr_FR
+--- replaced obj /usr/share/man/de_DE/man8/route.8.bz2
+--- replaced obj /usr/share/man/de_DE/man8/rarp.8.bz2
+--- replaced obj /usr/share/man/de_DE/man8/netstat.8.bz2
+--- replaced obj /usr/share/man/de_DE/man8/ifconfig.8.bz2
+--- replaced obj /usr/share/man/de_DE/man8/arp.8.bz2
+--- replaced dir /usr/share/man/de_DE/man8
+--- replaced obj /usr/share/man/de_DE/man5/ethers.5.bz2
+--- replaced dir /usr/share/man/de_DE/man5
+--- replaced obj /usr/share/man/de_DE/man1/hostname.1.bz2
+--- replaced obj /usr/share/man/de_DE/man1/dnsdomainname.1
+--- replaced dir /usr/share/man/de_DE/man1
+--- replaced dir /usr/share/man/de_DE
+--- replaced dir /usr/share/man
+--- replaced obj /usr/share/locale/pt_BR/LC_MESSAGES/net-tools.mo
+--- replaced dir /usr/share/locale/pt_BR/LC_MESSAGES
+--- replaced dir /usr/share/locale/pt_BR
+--- replaced obj /usr/share/locale/fr/LC_MESSAGES/net-tools.mo
+--- replaced dir /usr/share/locale/fr/LC_MESSAGES
+--- replaced dir /usr/share/locale/fr
+--- replaced obj /usr/share/locale/et/LC_MESSAGES/net-tools.mo
+--- replaced dir /usr/share/locale/et/LC_MESSAGES
+--- replaced dir /usr/share/locale/et
+--- replaced obj /usr/share/locale/de/LC_MESSAGES/net-tools.mo
+--- replaced dir /usr/share/locale/de/LC_MESSAGES
+--- replaced dir /usr/share/locale/de
+--- replaced obj /usr/share/locale/cs/LC_MESSAGES/net-tools.mo
+--- replaced dir /usr/share/locale/cs/LC_MESSAGES
+--- replaced dir /usr/share/locale/cs
+--- replaced dir /usr/share/locale
+--- replaced obj /usr/share/doc/net-tools-2.10/TODO.bz2
+--- replaced obj /usr/share/doc/net-tools-2.10/THANKS.bz2
+--- replaced obj /usr/share/doc/net-tools-2.10/README.bz2
+--- replaced dir /usr/share/doc/net-tools-2.10
+--- replaced dir /usr/share/doc
+--- replaced dir /usr/share
+--- replaced dir /usr
+--- replaced obj /sbin/rarp
+--- replaced obj /sbin/nameif
+--- replaced obj /sbin/mii-tool
+--- replaced obj /sbin/iptunnel
+--- replaced obj /sbin/ipmaddr
+--- replaced obj /sbin/arp
+--- cfgpro   dir /sbin
+--- replaced obj /bin/route
+--- replaced obj /bin/netstat
+--- replaced obj /bin/ifconfig
+--- replaced obj /bin/hostname
+--- replaced sym /bin/dnsdomainname
+--- cfgpro   dir /bin
+>>> Original instance of package unmerged safely.
+>>> sys-apps/net-tools-2.10 merged.
+
+>>> Completed (1 of 1) sys-apps/net-tools-2.10::gentoo
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 5 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+

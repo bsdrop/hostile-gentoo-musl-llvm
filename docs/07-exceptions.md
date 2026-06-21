@@ -62,6 +62,23 @@
   `-elogind` on pipewire/wireplumber/seatd/polkit/dbus. *Why ok:* musl-idiomatic; Wayland/PipeWire
   direction intact.
 
+### Full-LTO escalation & extra hardening
+- **E1-UPDATE — full `-flto`.** ThinLTO bring-up → full LTO applied via `emerge -e @world` (CFLAG,
+  not USE; needs emptytree). 436/441 built; toolchain (clang/llvm 22) rebuilt under full LTO and the
+  system boots. See [06-full-lto.md](06-full-lto.md), [08-findings.md](08-findings.md).
+- **E16 — extra hardening/optimization flags** (user request, "more painful"): `-O2`→`-O3`, plus
+  `-fstack-clash-protection`, `-fcf-protection=full` (CET; endbr64 verified in shipped binaries),
+  `-ftrivial-auto-var-init=zero`, `-fzero-call-used-regs=used-gpr`; LDFLAGS `+= -Wl,-z,noexecstack
+  -Wl,-z,separate-code -Wl,--icf=safe`. Applied via a second `emerge -e @world`; **435/440 built,
+  zero NEW failures** (only the pre-existing net-tools/elogind/obsolete-llvm-21), system boots.
+  *(Note: an invalid `FEATURES=stricter` token was briefly added then removed — it is not a real
+  Portage FEATURE.)*
+- **E17 — net-tools ROSE disabled.** `net-tools-2.10` `#include <linux/rose.h>` (guarded by
+  `#if HAVE_AFROSE`, default y) fails because kernel-7.1 UAPI omits `linux/rose.h`. Fix:
+  `/etc/portage/bashrc` `post_src_prepare` sets `HAVE_AFROSE/HAVE_HWROSE=n` in config.in →
+  rose.c compiles as a stub → net-tools builds (hardening flags applied). ROSE is ham-radio AX.25;
+  no loss (iproute2 used). Reportable: ebuild has no toggle for ROSE on kernels lacking the header.
+
 ## Never done (prohibited)
 musl→glibc · OpenRC→systemd · clang→gcc default · global `-X`/`-pulseaudio`/`-systemd` · global LTO/PIE
 off · global `FEATURES=-test` · switch to an easier profile · undocumented masks.

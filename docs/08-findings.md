@@ -54,11 +54,30 @@ dominant friction:
 - There is no composite profile for the target; and `selinux` is masked by `profiles/base/use.mask`
   unless on a SELinux profile, so a musl/llvm SELinux target needs a manual `use.mask` override.
 
+## F7 — full LTO + aggressive hardening rebuild: clean (the notable non-finding)
+Two full `emerge -e @world` passes (≈440 pkgs each) under (1) full `-flto`, then (2) full LTO +
+`-O3` + CET (`-fcf-protection=full`) + `-fstack-clash-protection` + `-ftrivial-auto-var-init=zero`
++ `-fzero-call-used-regs=used-gpr` + lld `--icf=safe`/`separate-code`/`noexecstack`. **Both boot.**
+The toolchain itself (clang/llvm 22) rebuilds under full LTO. Across both passes the *only* failures
+were the three already-known ones below — the aggressive flags introduced **zero new breakage**.
+Failures (identical in both passes):
+- `llvm-core/llvm-21.1.8` — obsolete; superseded by 22.1.8 which built fine. The `-e` attempt to
+  rebuild the old 21 source fails on a libc++-22 `static_assert` (`make_transparent`/`std::less<void>`
+  in `HexagonRDFOpt.cpp`) — a version skew, not LTO/OOM. Non-issue (22 is installed & consistent).
+- `sys-apps/net-tools-2.10` — `linux/rose.h` (see F8 / E17) — now FIXED.
+- `sys-auth/elogind-257.16` — musl build blocker (F4 / E14) — substituted by seatd.
+
+## F8 — net-tools needs linux/rose.h which kernel-7.1 UAPI omits (FIXED via E17)
+`net-tools-2.10` `lib/rose.c` does `#include <linux/rose.h>` under `#if HAVE_AFROSE` (config default
+y), but kernel-7.1 ships no `linux/rose.h` (only `ax25.h`). Not a musl issue. Fixed by disabling
+ROSE in config.in (`/etc/portage/bashrc` hook). Reportable: net-tools has no USE/toggle for ROSE.
+
 ## Open / in-progress / roadmap
 Done in order; each stage snapshots before the next so failures are recoverable.
+Snapshots so far: `base-musl-llvm-selinux-wayland`, `base-full-lto`, `base-full-lto-hardened`.
 
-1. **Full-LTO `@world` (441 pkgs):** running; per-package full-LTO failures (if any) get appended
-   here with logs. On success → snapshot `base-full-lto`. See [06-full-lto.md](06-full-lto.md).
+1. **Full-LTO `@world`:** ✅ done (snapshot `base-full-lto`); extra-hardening pass ✅ done
+   (snapshot `base-full-lto-hardened`). See [06-full-lto.md](06-full-lto.md) and F7 above.
 2. **Hyprland** (compositor, the "B" goal): heavy C++ Wayland stack — a strong combined test of
    full-LTO + musl + clang. Attempted on the full-LTO base.
 3. **GNOME:** stretch goal. Known to fail even on Arch per the user, so this is expected to be a

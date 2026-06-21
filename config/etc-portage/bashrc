@@ -1,0 +1,9 @@
+# QA: disable ROSE in net-tools — kernel-7.1 UAPI lacks linux/rose.h, but net-tools
+# config.in defaults HAVE_AFROSE/HAVE_HWROSE to 'y', so rose.c fails to compile. See E17.
+post_src_prepare() {
+    if [[ ${CATEGORY}/${PN} == sys-apps/net-tools ]]; then
+        einfo "QA(E17): disabling ROSE (HAVE_AFROSE/HAVE_HWROSE) — kernel lacks linux/rose.h"
+        sed -i -e "/^bool.* HAVE_AFROSE /s:[yn]\$:n:" \
+               -e "/^bool.* HAVE_HWROSE /s:[yn]\$:n:" config.in || true
+    fi
+}

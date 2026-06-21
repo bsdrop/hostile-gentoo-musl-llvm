@@ -19,3 +19,9 @@
 [13:18:18] REBOOT for boot-time SELinux test
 [13:20:46] install PipeWire/Wayland stack (tests off, no elogind/X11)
 [13:30:28] graceful poweroff for snapshot
+[13:33:10] FULL LTO: emerge -e @world (FEATURES=-test) START
+[18:04:28] full-LTO @world DONE (436/441; fails: llvm-21(obsolete->22 ok), net-tools(musl rose.h), elogind(E14)); relabel+snapshot
+[18:07:03] HARDENING escalation flags applied; emerge -e @world START
+[21:30:15] removed invalid FEATURES=stricter (no-op token); doc corrected
+[21:39:01] TODO(post-build): fix net-tools rose.h via post_src_configure hook disabling HAVE_AFROSE/HAVE_HWROSE (kernel-7.1 UAPI lacks linux/rose.h); document as E17
+[22:28:42] E17 net-tools ROSE fix done (RC=0, hardening flags applied); relabel + snapshot base-full-lto-hardened
