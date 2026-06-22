@@ -30,14 +30,19 @@ The musl-idiomatic seat/session manager is **standalone `seatd`** (`sys-auth/sea
 runs as the seat daemon. `elogind` stays in *global* USE (target intent preserved); it's only
 disabled where it would otherwise be pulled into a build that can't succeed.
 
-## Next: compositors + desktop + browsers (the "B" goals)
-On the full-LTO base, in order (snapshotting between stages):
-1. **Hyprland** — heavy C++ Wayland stack; strong combined test of full-LTO + musl + clang.
-2. **GNOME** — stretch goal (fails even on Arch per the user, so likely a valuable failure artifact).
-3. **Browsers**, at least one running per family under Wayland:
+## Next: compositors + session stack + desktop + browsers (the "B" goals)
+On the hardened full-LTO base, in order (snapshotting between stages), **XWayland off (`-X`)** for the
+Wayland-native stages:
+1. **Hyprland** (via third-party `hyproverlay`) — heavy C++ Wayland stack; combined full-LTO + musl
+   + clang torture test.
+2. **wlroots + sway** — the reference wlroots compositor, also `-X`.
+3. **Wayland session/portal stack** — `pipewire` (have) + `seatd` (have) + `xdg-desktop-portal-wlr`.
+4. **SELinux → enforcing** — switch from permissive after reviewing AVC denials.
+5. **GNOME** — stretch goal (fails even on Arch per the user), **plus a comparison**: everything is
+   `-X` so far; also test GNOME with `+X`/**XWayland enabled** to see whether X11/XWayland actually
+   works better than pure Wayland here.
+6. **Browsers**, ≥1 running per family under Wayland:
    - Firefox family: **Mullvad Browser** / **Tor Browser** / **LibreWolf**
    - Chromium family: **Trivalent** / **Cromite** / **Brave**
-   The real musl+clang+LTO torture test (huge C++ trees, many glibc-assuming).
-4. **SELinux → enforcing**, *only if* the desktop + a browser actually run (review AVC denials first).
 
 Status + results tracked in [08-findings.md](08-findings.md).

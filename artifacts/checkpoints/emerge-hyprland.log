@@ -1,0 +1,733 @@
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+
+These are the packages that would be merged, in order:
+
+Calculating dependencies  ... done!
+Dependency resolution took 2.10 s (backtrack: 0/20).
+
+[ebuild  N     ] dev-libs/oniguruma-6.9.10:0/5::gentoo  USE="-crnl-as-line-terminator -static-libs" 957 KiB
+[ebuild  N     ] media-fonts/liberation-fonts-2.1.5::gentoo  USE="-X -fontforge" 2330 KiB
+[ebuild  N     ] virtual/ttf-fonts-1-r2::gentoo  0 KiB
+[ebuild  N     ] dev-libs/vala-common-0.56.19::gentoo  3914 KiB
+[ebuild  N     ] sys-libs/mtdev-1.1.7::gentoo  295 KiB
+[ebuild  N     ] x11-libs/xtrans-1.6.0::gentoo  USE="-doc" 174 KiB
+[ebuild  N     ] media-libs/tiff-4.7.1:0/6::gentoo  USE="cxx zlib -jbig -jpeg -lerc -libdeflate -lzma -opengl -static-libs -test -verify-sig -webp -zstd" 2304 KiB
+[ebuild  N     ] dev-lang/yasm-1.3.0-r2::gentoo  USE="nls" 1458 KiB
+[ebuild  N     ] media-libs/libwebp-1.6.0:0/7::gentoo  USE="jpeg png -gif -opengl -static-libs -swap-16bit-csp -tiff" CPU_FLAGS_X86="sse2 -avx2 -sse4_1" 4196 KiB
+[ebuild  N     ] media-libs/libde265-1.0.16::gentoo  USE="-debug -dec265 -enc265 -sdl -tools" CPU_FLAGS_X86="-sse4_1" 817 KiB
+[ebuild  N     ] media-libs/kvazaar-2.3.2:0/6::gentoo  USE="-static-libs -test" 587 KiB
+[ebuild   R    ] media-libs/freetype-2.14.3:2::gentoo  USE="adobe-cff bzip2 cleartype-hinting harfbuzz* png -X -brotli -debug -doc -fontforge -static-libs -svg -utils -verify-sig" 0 KiB
+[ebuild  N     ] app-misc/jq-1.8.1:0/1::gentoo  USE="oniguruma -static-libs -test" 1377 KiB
+[ebuild  N     ] media-gfx/graphite2-1.3.14_p20210810-r5::gentoo  USE="-perl -test" PERL_FEATURES="(-debug) -ithreads (-quadmath)" 6501 KiB
+[ebuild  N     ] dev-libs/pugixml-1.15::gentoo  USE="-test" 570 KiB
+[ebuild  N     ] dev-util/hyprwayland-scanner-0.4.6:0/0.4::hyproverlay  12 KiB
+[ebuild  N     ] net-libs/libssh2-1.11.1::gentoo  USE="zlib -gcrypt -mbedtls -test -verify-sig" 705 KiB
+[ebuild  N     ] dev-cpp/muParser-2.3.5:0/2.3::gentoo  USE="openmp -doc -test" 113 KiB
+[ebuild  N     ] dev-cpp/glaze-7.0.2::hyproverlay  USE="-examples -fuzzing -test" 1318 KiB
+[ebuild  N     ] dev-libs/iniparser-4.2.6:0/4::gentoo  USE="-doc -examples" 34 KiB
+[ebuild  N     ] dev-libs/libzip-1.11.4-r2:0/5::gentoo  USE="bzip2 ssl -gnutls -lzma -mbedtls -test -tools -zstd" 775 KiB
+[ebuild  N     ] net-libs/llhttp-9.4.2:0/9.4::gentoo  40 KiB
+[ebuild  N     ] app-arch/brotli-1.2.0-r1:0/1::gentoo  USE="-debug -python -test" PYTHON_TARGETS="python3_14 -python3_12 -python3_13" 632 KiB
+[ebuild  N     ] dev-cpp/highway-1.4.0::gentoo  USE="-test -verify-sig" 3606 KiB
+[ebuild  N     ] dev-libs/udis86-1.7.2-r2::gentoo  USE="-test" 435 KiB
+[ebuild  N     ] x11-base/xcb-proto-1.17.0::gentoo  PYTHON_TARGETS="python3_14 -python3_12 -python3_13" 149 KiB
+[ebuild  N     ] app-eselect/eselect-fontconfig-20220403::gentoo  2 KiB
+[ebuild  N     ] dev-libs/libgit2-1.9.4:0/1.9::gentoo  USE="ssh -examples -gssapi -test -trace" 7495 KiB
+[ebuild  NS    ] app-text/docbook-xml-dtd-4.3-r2:4.3::gentoo [4.1.2-r7:4.1.2::gentoo, 4.2-r3:4.2::gentoo, 4.4-r3:4.4::gentoo, 4.5-r2:4.5::gentoo] 82 KiB
+[ebuild  N     ] dev-cpp/abseil-cpp-20260107.1:0/2601.1.0-cpp20::gentoo  USE="-debug -test -test-helpers" 2251 KiB
+[ebuild  N     ] dev-libs/re2-2025.08.12:0/11::gentoo  USE="-icu -test" 389 KiB
+[ebuild  N     ] media-libs/libaom-3.12.1:0/3::gentoo  USE="examples (-big-endian) -debug -doc -test" CPU_FLAGS_X86="mmx sse sse2 -avx -avx2 -sse3 -sse4_1 -sse4_2 -ssse3" 5369 KiB
+[ebuild  N     ] dev-util/cargo-c-0.10.22-r1::gentoo  USE="-debug" 36112 KiB
+[ebuild  N     ] x11-libs/pixman-0.46.4::gentoo  USE="(-loongson2f) -static-libs -test" CPU_FLAGS_X86="mmxext sse2 -ssse3" 646 KiB
+[ebuild  N     ] x11-base/xorg-proto-2025.1::gentoo  USE="-test" 749 KiB
+[ebuild  N     ] gui-libs/hyprutils-0.13.1:0/0.13::hyproverlay  USE="-test" 60 KiB
+[ebuild  N     ] media-libs/lcms-2.19.1:2::gentoo  USE="-doc -jpeg -static-libs -test -tiff" 5595 KiB
+[ebuild  N     ] dev-cpp/tomlplusplus-3.4.0::gentoo  USE="-test" 1265 KiB
+[ebuild  N     ] media-libs/fontconfig-2.18.1:1.0::gentoo  USE="nls -doc -test" 1327 KiB
+[ebuild  N     ] dev-libs/hyprland-protocols-0.7.0:0/0.7::hyproverlay  12 KiB
+[ebuild  N     ] x11-libs/libXau-1.0.12::gentoo  USE="-doc" 276 KiB
+[ebuild  N     ] x11-libs/libXdmcp-1.1.5::gentoo  USE="-doc" 291 KiB
+[ebuild  N     ] x11-libs/libxcb-1.17.0:0/1.12::gentoo  USE="selinux xkb -doc -test" 445 KiB
+[ebuild  N     ] x11-misc/compose-tables-1.8.13::gentoo  1762 KiB
+[ebuild  N     ] x11-libs/libX11-1.8.13::gentoo  USE="-doc -test" 0 KiB
+[ebuild  N     ] x11-libs/libXrender-0.9.12::gentoo  304 KiB
+[ebuild  N     ] x11-libs/libXfixes-6.0.2::gentoo  USE="-doc" 265 KiB
+[ebuild  N     ] x11-libs/libXcursor-1.2.3::gentoo  USE="-doc" 286 KiB
+[ebuild  N     ] dev-libs/fribidi-1.0.16::gentoo  USE="-doc -test" 1073 KiB
+[ebuild  N     ] x11-misc/xkeyboard-config-2.47::gentoo  USE="-test" 909 KiB
+[ebuild  N     ] x11-libs/libxkbcommon-1.13.2::gentoo  USE="wayland -X -doc -static-libs -test -tools" 1215 KiB
+[ebuild  N     ] media-libs/openjpeg-2.5.4-r1:2/7::gentoo  USE="-doc -test" 2107 KiB
+[ebuild  N     ] dev-libs/libevdev-1.13.6::gentoo  USE="-doc -test" 462 KiB
+[ebuild  N     ] dev-libs/hyprlang-0.6.8:0/0.6::hyproverlay  63 KiB
+[ebuild  N     ] gui-libs/hyprwire-0.3.1:0/0.3::hyproverlay  USE="-test" 53 KiB
+[ebuild  N     ] dev-libs/libinput-1.31.3:0/10::gentoo  USE="-doc -lua -test" INPUT_DEVICES="-wacom" LUA_SINGLE_TARGET="lua5-4" 916 KiB
+[ebuild  N     ] x11-libs/cairo-1.18.4-r1::gentoo  USE="glib -X (-aqua) (-debug) -gtk-doc -lzo -test" 41892 KiB
+[ebuild  N     ] media-libs/harfbuzz-12.3.2:0/6.0.0::gentoo  USE="cairo glib graphite introspection truetype -debug -doc -experimental -icu -test" 18832 KiB
+[ebuild  N     ] media-libs/libheif-1.21.2:0/1.21::gentoo  USE="aom de265 jpeg jpeg2k kvazaar threads webp -dav1d -doc -ffmpeg -gdk-pixbuf -gui -openh264 -rav1e -svt-av1 -test -test-full -tools -x264 -x265" 1816 KiB
+[ebuild  N     ] x11-libs/pango-1.57.1::gentoo  USE="introspection -X -debug -examples -gtk-doc -libthai -sysprof -test" 2528 KiB
+[ebuild  N     ] x11-libs/gdk-pixbuf-2.42.12:2::gentoo  USE="introspection -gif -gtk-doc -jpeg -test -tiff" 6373 KiB
+[ebuild  N     ] dev-lang/vala-0.56.19:0.56::gentoo  USE="-test -valadoc" 0 KiB
+[ebuild  N     ] gui-libs/aquamarine-0.12.1:0/0.12::hyproverlay  95 KiB
+[ebuild  N     ] gnome-base/librsvg-2.62.2-r1:2::gentoo  USE="introspection vala -debug -gtk-doc -test" 25144 KiB
+[ebuild  N     ] media-libs/libjxl-0.11.2:0/0.11::gentoo  USE="gdk-pixbuf png -gif -jpeg -openexr -test" 1839 KiB
+[ebuild  N     ] dev-libs/hyprgraphics-0.5.1-r1:0/0.5::hyproverlay  450 KiB
+[ebuild  N     ] gui-libs/hyprcursor-0.1.13-r1:0/0.1::hyproverlay  29 KiB
+[ebuild  N     ] gui-libs/hyprtoolkit-0.5.4:0/0.5::hyproverlay  USE="-test" 565 KiB
+[ebuild  N     ] gui-libs/hyprland-guiutils-0.2.1:0/0.2::hyproverlay  17 KiB
+[ebuild  N     ] gui-wm/hyprland-0.55.4:0/0.55.4::hyproverlay  USE="filecaps guiutils -X -hyprpm -systemd -uwsm" LUA_SINGLE_TARGET="lua5-4" 51882 KiB
+
+Total: 70 packages (68 new, 1 in new slot, 1 reinstall), Size of downloads: 256508 KiB
+>>> Verifying ebuild manifests
+
+>>> Running pre-merge checks for media-libs/freetype-2.14.3
+>>> Running pre-merge checks for dev-cpp/muParser-2.3.5
+>>> Running pre-merge checks for dev-cpp/highway-1.4.0
+>>> Running pre-merge checks for x11-libs/pixman-0.46.4
+>>> Running pre-merge checks for media-libs/libheif-1.21.2
+>>> Jobs: 0 of 70 complete, 1 running                                   Load avg: 0.14, 0.14, 0.07
+>>> Emerging (1 of 70) dev-libs/oniguruma-6.9.10::gentoo
+>>> Jobs: 0 of 70 complete, 1 running                                   Load avg: 0.14, 0.14, 0.07
+>>> Jobs: 0 of 70 complete, 2 running                                   Load avg: 0.14, 0.14, 0.07
+>>> Emerging (2 of 70) media-fonts/liberation-fonts-2.1.5::gentoo
+>>> Jobs: 0 of 70 complete, 2 running                                   Load avg: 0.14, 0.14, 0.07
+>>> Jobs: 0 of 70 complete, 1 running                                   Load avg: 1.08, 0.33, 0.13
+>>> Jobs: 0 of 70 complete, 2 running, 1 merge wait                     Load avg: 1.08, 0.33, 0.13
+>>> Emerging (3 of 70) dev-libs/vala-common-0.56.19::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 1 merge wait                     Load avg: 1.08, 0.33, 0.13
+>>> Jobs: 0 of 70 complete, 1 running, 1 merge wait                     Load avg: 1.08, 0.33, 0.13
+>>> Jobs: 0 of 70 complete, 2 running, 2 merge wait                     Load avg: 1.08, 0.33, 0.13
+>>> Emerging (4 of 70) sys-libs/mtdev-1.1.7::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 2 merge wait                     Load avg: 1.08, 0.33, 0.13
+>>> Jobs: 0 of 70 complete, 1 running, 2 merge wait                     Load avg: 1.39, 0.41, 0.16
+>>> Jobs: 0 of 70 complete, 2 running, 3 merge wait                     Load avg: 1.39, 0.41, 0.16
+>>> Emerging (5 of 70) x11-libs/xtrans-1.6.0::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 3 merge wait                     Load avg: 1.39, 0.41, 0.16
+>>> Jobs: 0 of 70 complete, 1 running, 3 merge wait                     Load avg: 1.52, 0.45, 0.17
+>>> Jobs: 0 of 70 complete, 2 running, 4 merge wait                     Load avg: 1.52, 0.45, 0.17
+>>> Emerging (6 of 70) media-libs/tiff-4.7.1::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 4 merge wait                     Load avg: 1.52, 0.45, 0.17
+>>> Jobs: 0 of 70 complete, 1 running, 4 merge wait                     Load avg: 1.52, 0.45, 0.17
+>>> Jobs: 0 of 70 complete, 2 running, 5 merge wait                     Load avg: 1.52, 0.45, 0.17
+>>> Emerging (7 of 70) dev-lang/yasm-1.3.0-r2::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 5 merge wait                     Load avg: 1.52, 0.45, 0.17
+>>> Jobs: 0 of 70 complete, 1 running, 5 merge wait                     Load avg: 2.57, 0.77, 0.28
+>>> Jobs: 0 of 70 complete, 2 running, 6 merge wait                     Load avg: 2.57, 0.77, 0.28
+>>> Emerging (8 of 70) media-libs/libde265-1.0.16::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 6 merge wait                     Load avg: 2.57, 0.77, 0.28
+>>> Jobs: 0 of 70 complete, 1 running, 6 merge wait                     Load avg: 2.56, 0.82, 0.31
+>>> Jobs: 0 of 70 complete, 2 running, 7 merge wait                     Load avg: 2.56, 0.82, 0.31
+>>> Emerging (9 of 70) media-gfx/graphite2-1.3.14_p20210810-r5::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 7 merge wait                     Load avg: 2.56, 0.82, 0.31
+>>> Jobs: 0 of 70 complete, 1 running, 7 merge wait                     Load avg: 3.00, 0.94, 0.35
+>>> Jobs: 0 of 70 complete, 2 running, 8 merge wait                     Load avg: 3.00, 0.94, 0.35
+>>> Emerging (10 of 70) dev-libs/pugixml-1.15::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 8 merge wait                     Load avg: 3.00, 0.94, 0.35
+>>> Jobs: 0 of 70 complete, 1 running, 8 merge wait                     Load avg: 3.99, 1.27, 0.47
+>>> Jobs: 0 of 70 complete, 2 running, 9 merge wait                     Load avg: 3.99, 1.27, 0.47
+>>> Emerging (11 of 70) net-libs/libssh2-1.11.1::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 9 merge wait                     Load avg: 3.99, 1.27, 0.47
+>>> Jobs: 0 of 70 complete, 1 running, 9 merge wait                     Load avg: 3.91, 1.30, 0.48
+>>> Jobs: 0 of 70 complete, 2 running, 10 merge wait                    Load avg: 3.91, 1.30, 0.48
+>>> Emerging (12 of 70) dev-cpp/muParser-2.3.5::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 10 merge wait                    Load avg: 3.91, 1.30, 0.48
+>>> Jobs: 0 of 70 complete, 1 running, 10 merge wait                    Load avg: 5.14, 1.65, 0.60
+>>> Jobs: 0 of 70 complete, 2 running, 11 merge wait                    Load avg: 5.14, 1.65, 0.60
+>>> Emerging (13 of 70) dev-cpp/glaze-7.0.2::hyproverlay
+>>> Jobs: 0 of 70 complete, 2 running, 11 merge wait                    Load avg: 5.14, 1.65, 0.60
+>>> Jobs: 0 of 70 complete, 1 running, 11 merge wait                    Load avg: 4.89, 1.66, 0.61
+>>> Jobs: 0 of 70 complete, 2 running, 12 merge wait                    Load avg: 4.89, 1.66, 0.61
+>>> Emerging (14 of 70) dev-libs/iniparser-4.2.6::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 12 merge wait                    Load avg: 4.89, 1.66, 0.61
+>>> Jobs: 0 of 70 complete, 1 running, 12 merge wait                    Load avg: 4.65, 1.66, 0.62
+>>> Jobs: 0 of 70 complete, 2 running, 13 merge wait                    Load avg: 4.65, 1.66, 0.62
+>>> Emerging (15 of 70) dev-libs/libzip-1.11.4-r2::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 13 merge wait                    Load avg: 4.65, 1.66, 0.62
+>>> Jobs: 0 of 70 complete, 1 running, 13 merge wait                    Load avg: 4.65, 1.66, 0.62
+>>> Jobs: 0 of 70 complete, 2 running, 14 merge wait                    Load avg: 4.65, 1.66, 0.62
+>>> Emerging (16 of 70) net-libs/llhttp-9.4.2::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 14 merge wait                    Load avg: 4.65, 1.66, 0.62
+>>> Jobs: 0 of 70 complete, 1 running, 14 merge wait                    Load avg: 4.17, 1.66, 0.63
+>>> Jobs: 0 of 70 complete, 2 running, 15 merge wait                    Load avg: 4.17, 1.66, 0.63
+>>> Emerging (17 of 70) app-arch/brotli-1.2.0-r1::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 15 merge wait                    Load avg: 4.17, 1.66, 0.63
+>>> Jobs: 0 of 70 complete, 1 running, 15 merge wait                    Load avg: 4.56, 1.78, 0.68
+>>> Jobs: 0 of 70 complete, 2 running, 16 merge wait                    Load avg: 4.56, 1.78, 0.68
+>>> Emerging (18 of 70) dev-cpp/highway-1.4.0::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 16 merge wait                    Load avg: 4.56, 1.78, 0.68
+>>> Jobs: 0 of 70 complete, 1 running, 16 merge wait                    Load avg: 5.07, 2.02, 0.77
+>>> Jobs: 0 of 70 complete, 2 running, 17 merge wait                    Load avg: 5.07, 2.02, 0.77
+>>> Emerging (19 of 70) dev-libs/udis86-1.7.2-r2::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 17 merge wait                    Load avg: 5.07, 2.02, 0.77
+>>> Jobs: 0 of 70 complete, 1 running, 17 merge wait                    Load avg: 6.93, 2.83, 1.09
+>>> Jobs: 0 of 70 complete, 2 running, 18 merge wait                    Load avg: 6.93, 2.83, 1.09
+>>> Emerging (20 of 70) x11-base/xcb-proto-1.17.0::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 18 merge wait                    Load avg: 6.93, 2.83, 1.09
+>>> Jobs: 0 of 70 complete, 1 running, 18 merge wait                    Load avg: 7.33, 3.05, 1.18
+>>> Jobs: 0 of 70 complete, 2 running, 19 merge wait                    Load avg: 7.33, 3.05, 1.18
+>>> Emerging (21 of 70) app-eselect/eselect-fontconfig-20220403::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 19 merge wait                    Load avg: 7.33, 3.05, 1.18
+>>> Jobs: 0 of 70 complete, 1 running, 19 merge wait                    Load avg: 7.73, 3.28, 1.28
+>>> Jobs: 0 of 70 complete, 2 running, 20 merge wait                    Load avg: 7.73, 3.28, 1.28
+>>> Emerging (22 of 70) app-text/docbook-xml-dtd-4.3-r2::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 20 merge wait                    Load avg: 7.73, 3.28, 1.28
+>>> Jobs: 0 of 70 complete, 1 running, 20 merge wait                    Load avg: 8.07, 3.50, 1.37
+>>> Jobs: 0 of 70 complete, 2 running, 21 merge wait                    Load avg: 8.07, 3.50, 1.37
+>>> Emerging (23 of 70) dev-cpp/abseil-cpp-20260107.1::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 21 merge wait                    Load avg: 8.07, 3.50, 1.37
+>>> Jobs: 0 of 70 complete, 1 running, 21 merge wait                    Load avg: 8.54, 5.03, 2.12
+>>> Jobs: 0 of 70 complete, 2 running, 22 merge wait                    Load avg: 8.54, 5.03, 2.12
+>>> Emerging (24 of 70) x11-libs/pixman-0.46.4::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 22 merge wait                    Load avg: 8.54, 5.03, 2.12
+>>> Jobs: 0 of 70 complete, 1 running, 22 merge wait                    Load avg: 7.53, 4.93, 2.11
+>>> Jobs: 0 of 70 complete, 2 running, 23 merge wait                    Load avg: 7.53, 4.93, 2.11
+>>> Emerging (25 of 70) x11-base/xorg-proto-2025.1::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 23 merge wait                    Load avg: 7.53, 4.93, 2.11
+>>> Jobs: 0 of 70 complete, 1 running, 23 merge wait                    Load avg: 6.68, 4.84, 2.11
+>>> Jobs: 0 of 70 complete, 2 running, 24 merge wait                    Load avg: 6.68, 4.84, 2.11
+>>> Emerging (26 of 70) media-libs/lcms-2.19.1::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 24 merge wait                    Load avg: 6.68, 4.84, 2.11
+>>> Jobs: 0 of 70 complete, 1 running, 24 merge wait                    Load avg: 6.68, 4.84, 2.11
+>>> Jobs: 0 of 70 complete, 2 running, 25 merge wait                    Load avg: 6.68, 4.84, 2.11
+>>> Emerging (27 of 70) dev-cpp/tomlplusplus-3.4.0::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 25 merge wait                    Load avg: 6.68, 4.84, 2.11
+>>> Jobs: 0 of 70 complete, 1 running, 25 merge wait                    Load avg: 6.40, 4.84, 2.14
+>>> Jobs: 0 of 70 complete, 2 running, 26 merge wait                    Load avg: 6.40, 4.84, 2.14
+>>> Emerging (28 of 70) dev-libs/hyprland-protocols-0.7.0::hyproverlay
+>>> Jobs: 0 of 70 complete, 2 running, 26 merge wait                    Load avg: 6.40, 4.84, 2.14
+>>> Jobs: 0 of 70 complete, 1 running, 26 merge wait                    Load avg: 6.13, 4.81, 2.15
+>>> Jobs: 0 of 70 complete, 2 running, 27 merge wait                    Load avg: 6.13, 4.81, 2.15
+>>> Emerging (29 of 70) dev-libs/fribidi-1.0.16::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 27 merge wait                    Load avg: 6.13, 4.81, 2.15
+>>> Jobs: 0 of 70 complete, 1 running, 27 merge wait                    Load avg: 5.80, 4.76, 2.15
+>>> Jobs: 0 of 70 complete, 2 running, 28 merge wait                    Load avg: 5.80, 4.76, 2.15
+>>> Emerging (30 of 70) x11-misc/xkeyboard-config-2.47::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 28 merge wait                    Load avg: 5.80, 4.76, 2.15
+>>> Jobs: 0 of 70 complete, 1 running, 28 merge wait                    Load avg: 5.49, 4.72, 2.15
+>>> Jobs: 0 of 70 complete, 2 running, 29 merge wait                    Load avg: 5.49, 4.72, 2.15
+>>> Emerging (31 of 70) dev-libs/libevdev-1.13.6::gentoo
+>>> Jobs: 0 of 70 complete, 2 running, 29 merge wait                    Load avg: 5.49, 4.72, 2.15
+>>> Jobs: 0 of 70 complete, 1 running, 29 merge wait                    Load avg: 5.49, 4.72, 2.15
+>>> Jobs: 0 of 70 complete, 30 merge wait                               Load avg: 5.13, 4.66, 2.14
+>>> Installing (2 of 70) media-fonts/liberation-fonts-2.1.5::gentoo
+>>> Jobs: 0 of 70 complete, 31 merge wait                               Load avg: 5.13, 4.66, 2.14
+>>> Installing (3 of 70) dev-libs/vala-common-0.56.19::gentoo
+>>> Jobs: 0 of 70 complete, 31 merge wait                               Load avg: 5.13, 4.66, 2.14
+>>> Completed (2 of 70) media-fonts/liberation-fonts-2.1.5::gentoo
+>>> Jobs: 0 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Installing (1 of 70) dev-libs/oniguruma-6.9.10::gentoo
+>>> Jobs: 0 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Jobs: 1 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Completed (3 of 70) dev-libs/vala-common-0.56.19::gentoo
+>>> Jobs: 1 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Installing (4 of 70) sys-libs/mtdev-1.1.7::gentoo
+>>> Jobs: 1 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Jobs: 2 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Completed (1 of 70) dev-libs/oniguruma-6.9.10::gentoo
+>>> Jobs: 2 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Jobs: 3 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Installing (5 of 70) x11-libs/xtrans-1.6.0::gentoo
+>>> Jobs: 3 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Completed (4 of 70) sys-libs/mtdev-1.1.7::gentoo
+>>> Jobs: 3 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Jobs: 4 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Installing (7 of 70) dev-lang/yasm-1.3.0-r2::gentoo
+>>> Jobs: 4 of 70 complete                                              Load avg: 4.88, 4.61, 2.14
+>>> Completed (5 of 70) x11-libs/xtrans-1.6.0::gentoo
+>>> Jobs: 4 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Jobs: 5 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Installing (6 of 70) media-libs/tiff-4.7.1::gentoo
+>>> Jobs: 5 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Completed (7 of 70) dev-lang/yasm-1.3.0-r2::gentoo
+>>> Jobs: 5 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Jobs: 6 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Installing (9 of 70) media-gfx/graphite2-1.3.14_p20210810-r5::gentoo
+>>> Jobs: 6 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Completed (6 of 70) media-libs/tiff-4.7.1::gentoo
+>>> Jobs: 6 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Jobs: 7 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Installing (10 of 70) dev-libs/pugixml-1.15::gentoo
+>>> Jobs: 7 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Completed (9 of 70) media-gfx/graphite2-1.3.14_p20210810-r5::gentoo
+>>> Jobs: 7 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Jobs: 8 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Installing (8 of 70) media-libs/libde265-1.0.16::gentoo
+>>> Jobs: 8 of 70 complete                                              Load avg: 4.65, 4.57, 2.14
+>>> Completed (10 of 70) dev-libs/pugixml-1.15::gentoo
+>>> Jobs: 8 of 70 complete                                              Load avg: 4.44, 4.52, 2.14
+>>> Jobs: 9 of 70 complete                                              Load avg: 4.44, 4.52, 2.14
+>>> Installing (11 of 70) net-libs/libssh2-1.11.1::gentoo
+>>> Jobs: 9 of 70 complete                                              Load avg: 4.44, 4.52, 2.14
+>>> Completed (8 of 70) media-libs/libde265-1.0.16::gentoo
+>>> Jobs: 9 of 70 complete                                              Load avg: 4.44, 4.52, 2.14
+>>> Jobs: 10 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Installing (12 of 70) dev-cpp/muParser-2.3.5::gentoo
+>>> Jobs: 10 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Completed (11 of 70) net-libs/libssh2-1.11.1::gentoo
+>>> Jobs: 10 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Jobs: 11 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Installing (13 of 70) dev-cpp/glaze-7.0.2::hyproverlay
+>>> Jobs: 11 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Completed (12 of 70) dev-cpp/muParser-2.3.5::gentoo
+>>> Jobs: 11 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Jobs: 12 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Installing (14 of 70) dev-libs/iniparser-4.2.6::gentoo
+>>> Jobs: 12 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Completed (13 of 70) dev-cpp/glaze-7.0.2::hyproverlay
+>>> Jobs: 12 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Jobs: 13 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Installing (16 of 70) net-libs/llhttp-9.4.2::gentoo
+>>> Jobs: 13 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Completed (14 of 70) dev-libs/iniparser-4.2.6::gentoo
+>>> Jobs: 13 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Jobs: 14 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Installing (15 of 70) dev-libs/libzip-1.11.4-r2::gentoo
+>>> Jobs: 14 of 70 complete                                             Load avg: 4.44, 4.52, 2.14
+>>> Completed (16 of 70) net-libs/llhttp-9.4.2::gentoo
+>>> Jobs: 14 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Jobs: 15 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Installing (17 of 70) app-arch/brotli-1.2.0-r1::gentoo
+>>> Jobs: 15 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Completed (15 of 70) dev-libs/libzip-1.11.4-r2::gentoo
+>>> Jobs: 15 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Jobs: 16 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Installing (19 of 70) dev-libs/udis86-1.7.2-r2::gentoo
+>>> Jobs: 16 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Completed (17 of 70) app-arch/brotli-1.2.0-r1::gentoo
+>>> Jobs: 16 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Jobs: 17 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Installing (20 of 70) x11-base/xcb-proto-1.17.0::gentoo
+>>> Jobs: 17 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Completed (19 of 70) dev-libs/udis86-1.7.2-r2::gentoo
+>>> Jobs: 17 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Jobs: 18 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Installing (21 of 70) app-eselect/eselect-fontconfig-20220403::gentoo
+>>> Jobs: 18 of 70 complete                                             Load avg: 4.24, 4.48, 2.14
+>>> Completed (20 of 70) x11-base/xcb-proto-1.17.0::gentoo
+>>> Jobs: 18 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Jobs: 19 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Installing (22 of 70) app-text/docbook-xml-dtd-4.3-r2::gentoo
+>>> Jobs: 19 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Completed (21 of 70) app-eselect/eselect-fontconfig-20220403::gentoo
+>>> Jobs: 19 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Jobs: 20 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Installing (23 of 70) dev-cpp/abseil-cpp-20260107.1::gentoo
+>>> Jobs: 20 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Completed (22 of 70) app-text/docbook-xml-dtd-4.3-r2::gentoo
+>>> Jobs: 20 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Jobs: 21 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Installing (18 of 70) dev-cpp/highway-1.4.0::gentoo
+>>> Jobs: 21 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Completed (23 of 70) dev-cpp/abseil-cpp-20260107.1::gentoo
+>>> Jobs: 21 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Jobs: 22 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Installing (24 of 70) x11-libs/pixman-0.46.4::gentoo
+>>> Jobs: 22 of 70 complete                                             Load avg: 4.06, 4.44, 2.13
+>>> Completed (18 of 70) dev-cpp/highway-1.4.0::gentoo
+>>> Jobs: 22 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Jobs: 23 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Installing (25 of 70) x11-base/xorg-proto-2025.1::gentoo
+>>> Jobs: 23 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Completed (24 of 70) x11-libs/pixman-0.46.4::gentoo
+>>> Jobs: 23 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Jobs: 24 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Installing (26 of 70) media-libs/lcms-2.19.1::gentoo
+>>> Jobs: 24 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Completed (25 of 70) x11-base/xorg-proto-2025.1::gentoo
+>>> Jobs: 24 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Jobs: 25 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Installing (27 of 70) dev-cpp/tomlplusplus-3.4.0::gentoo
+>>> Jobs: 25 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Completed (26 of 70) media-libs/lcms-2.19.1::gentoo
+>>> Jobs: 25 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Jobs: 26 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Installing (28 of 70) dev-libs/hyprland-protocols-0.7.0::hyproverlay
+>>> Jobs: 26 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Completed (27 of 70) dev-cpp/tomlplusplus-3.4.0::gentoo
+>>> Jobs: 26 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Jobs: 27 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Installing (30 of 70) x11-misc/xkeyboard-config-2.47::gentoo
+>>> Jobs: 27 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Completed (28 of 70) dev-libs/hyprland-protocols-0.7.0::hyproverlay
+>>> Jobs: 27 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Jobs: 28 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Installing (29 of 70) dev-libs/fribidi-1.0.16::gentoo
+>>> Jobs: 28 of 70 complete                                             Load avg: 3.98, 4.42, 2.14
+>>> Completed (30 of 70) x11-misc/xkeyboard-config-2.47::gentoo
+>>> Jobs: 28 of 70 complete                                             Load avg: 3.82, 4.38, 2.14
+>>> Jobs: 29 of 70 complete                                             Load avg: 3.82, 4.38, 2.14
+>>> Installing (31 of 70) dev-libs/libevdev-1.13.6::gentoo
+>>> Jobs: 29 of 70 complete                                             Load avg: 3.82, 4.38, 2.14
+>>> Completed (29 of 70) dev-libs/fribidi-1.0.16::gentoo
+>>> Jobs: 29 of 70 complete                                             Load avg: 3.82, 4.38, 2.14
+>>> Jobs: 30 of 70 complete                                             Load avg: 3.82, 4.38, 2.14
+>>> Completed (31 of 70) dev-libs/libevdev-1.13.6::gentoo
+>>> Jobs: 30 of 70 complete                                             Load avg: 3.82, 4.38, 2.14
+>>> Jobs: 31 of 70 complete                                             Load avg: 3.82, 4.38, 2.14
+>>> Jobs: 31 of 70 complete, 1 running                                  Load avg: 3.82, 4.38, 2.14
+>>> Emerging (32 of 70) virtual/ttf-fonts-1-r2::gentoo
+>>> Jobs: 31 of 70 complete, 1 running                                  Load avg: 3.82, 4.38, 2.14
+>>> Jobs: 31 of 70 complete, 2 running                                  Load avg: 3.59, 4.32, 2.13
+>>> Emerging (33 of 70) media-libs/libwebp-1.6.0::gentoo
+>>> Jobs: 31 of 70 complete, 2 running                                  Load avg: 3.59, 4.32, 2.13
+>>> Jobs: 31 of 70 complete, 1 running                                  Load avg: 3.59, 4.32, 2.13
+>>> Jobs: 31 of 70 complete, 2 running, 1 merge wait                    Load avg: 3.59, 4.32, 2.13
+>>> Emerging (34 of 70) media-libs/kvazaar-2.3.2::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 1 merge wait                    Load avg: 3.59, 4.32, 2.13
+>>> Jobs: 31 of 70 complete, 1 running, 1 merge wait                    Load avg: 3.73, 4.29, 2.18
+>>> Jobs: 31 of 70 complete, 2 running, 2 merge wait                    Load avg: 3.73, 4.29, 2.18
+>>> Emerging (35 of 70) app-misc/jq-1.8.1::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 2 merge wait                    Load avg: 3.73, 4.29, 2.18
+>>> Jobs: 31 of 70 complete, 1 running, 2 merge wait                    Load avg: 3.35, 4.18, 2.18
+>>> Jobs: 31 of 70 complete, 2 running, 3 merge wait                    Load avg: 3.35, 4.18, 2.18
+>>> Emerging (36 of 70) dev-util/hyprwayland-scanner-0.4.6::hyproverlay
+>>> Jobs: 31 of 70 complete, 2 running, 3 merge wait                    Load avg: 3.35, 4.18, 2.18
+>>> Jobs: 31 of 70 complete, 1 running, 3 merge wait                    Load avg: 3.21, 4.12, 2.18
+>>> Jobs: 31 of 70 complete, 2 running, 4 merge wait                    Load avg: 3.21, 4.12, 2.18
+>>> Emerging (37 of 70) dev-libs/libgit2-1.9.4::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 4 merge wait                    Load avg: 3.21, 4.12, 2.18
+>>> Jobs: 31 of 70 complete, 1 running, 4 merge wait                    Load avg: 3.12, 4.09, 2.18
+>>> Jobs: 31 of 70 complete, 2 running, 5 merge wait                    Load avg: 3.12, 4.09, 2.18
+>>> Emerging (38 of 70) dev-libs/re2-2025.08.12::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 5 merge wait                    Load avg: 3.12, 4.09, 2.18
+>>> Jobs: 31 of 70 complete, 1 running, 5 merge wait                    Load avg: 4.78, 4.42, 2.34
+>>> Jobs: 31 of 70 complete, 2 running, 6 merge wait                    Load avg: 4.78, 4.42, 2.34
+>>> Emerging (39 of 70) media-libs/libaom-3.12.1::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 6 merge wait                    Load avg: 4.78, 4.42, 2.34
+>>> Jobs: 31 of 70 complete, 1 running, 6 merge wait                    Load avg: 4.36, 4.34, 2.34
+>>> Jobs: 31 of 70 complete, 2 running, 7 merge wait                    Load avg: 4.36, 4.34, 2.34
+>>> Emerging (40 of 70) gui-libs/hyprutils-0.13.1::hyproverlay
+>>> Jobs: 31 of 70 complete, 2 running, 7 merge wait                    Load avg: 4.36, 4.34, 2.34
+>>> Jobs: 31 of 70 complete, 1 running, 7 merge wait                    Load avg: 6.92, 4.96, 2.60
+>>> Jobs: 31 of 70 complete, 2 running, 8 merge wait                    Load avg: 6.92, 4.96, 2.60
+>>> Emerging (41 of 70) x11-libs/libXau-1.0.12::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 8 merge wait                    Load avg: 6.92, 4.96, 2.60
+>>> Jobs: 31 of 70 complete, 1 running, 8 merge wait                    Load avg: 6.32, 4.90, 2.61
+>>> Jobs: 31 of 70 complete, 2 running, 9 merge wait                    Load avg: 6.32, 4.90, 2.61
+>>> Emerging (42 of 70) x11-libs/libXdmcp-1.1.5::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 9 merge wait                    Load avg: 6.32, 4.90, 2.61
+>>> Jobs: 31 of 70 complete, 1 running, 9 merge wait                    Load avg: 5.81, 4.84, 2.61
+>>> Jobs: 31 of 70 complete, 2 running, 10 merge wait                   Load avg: 5.81, 4.84, 2.61
+>>> Emerging (43 of 70) media-libs/openjpeg-2.5.4-r1::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 10 merge wait                   Load avg: 5.81, 4.84, 2.61
+>>> Jobs: 31 of 70 complete, 1 running, 10 merge wait                   Load avg: 5.49, 4.83, 2.66
+>>> Jobs: 31 of 70 complete, 2 running, 11 merge wait                   Load avg: 5.49, 4.83, 2.66
+>>> Emerging (44 of 70) dev-libs/libinput-1.31.3::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 11 merge wait                   Load avg: 5.49, 4.83, 2.66
+>>> Jobs: 31 of 70 complete, 1 running, 11 merge wait                   Load avg: 4.94, 4.74, 2.66
+>>> Jobs: 31 of 70 complete, 2 running, 12 merge wait                   Load avg: 4.94, 4.74, 2.66
+>>> Emerging (45 of 70) x11-libs/gdk-pixbuf-2.42.12::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 12 merge wait                   Load avg: 4.94, 4.74, 2.66
+>>> Jobs: 31 of 70 complete, 1 running, 12 merge wait                   Load avg: 5.40, 4.85, 2.73
+>>> Jobs: 31 of 70 complete, 2 running, 13 merge wait                   Load avg: 5.40, 4.85, 2.73
+>>> Emerging (46 of 70) dev-lang/vala-0.56.19::gentoo
+>>> Jobs: 31 of 70 complete, 2 running, 13 merge wait                   Load avg: 5.40, 4.85, 2.73
+>>> Jobs: 31 of 70 complete, 1 running, 13 merge wait                   Load avg: 5.32, 4.93, 2.88
+>>> Jobs: 31 of 70 complete, 14 merge wait                              Load avg: 4.37, 4.74, 2.85
+>>> Installing (32 of 70) virtual/ttf-fonts-1-r2::gentoo
+>>> Jobs: 31 of 70 complete, 15 merge wait                              Load avg: 4.37, 4.74, 2.85
+>>> Installing (34 of 70) media-libs/kvazaar-2.3.2::gentoo
+>>> Jobs: 31 of 70 complete, 15 merge wait                              Load avg: 4.37, 4.74, 2.85
+>>> Completed (32 of 70) virtual/ttf-fonts-1-r2::gentoo
+>>> Jobs: 31 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Installing (33 of 70) media-libs/libwebp-1.6.0::gentoo
+>>> Jobs: 31 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Jobs: 32 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Completed (34 of 70) media-libs/kvazaar-2.3.2::gentoo
+>>> Jobs: 32 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Installing (35 of 70) app-misc/jq-1.8.1::gentoo
+>>> Jobs: 32 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Jobs: 33 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Completed (33 of 70) media-libs/libwebp-1.6.0::gentoo
+>>> Jobs: 33 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Jobs: 34 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Installing (36 of 70) dev-util/hyprwayland-scanner-0.4.6::hyproverlay
+>>> Jobs: 34 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Completed (35 of 70) app-misc/jq-1.8.1::gentoo
+>>> Jobs: 34 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Jobs: 35 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Installing (38 of 70) dev-libs/re2-2025.08.12::gentoo
+>>> Jobs: 35 of 70 complete                                             Load avg: 4.37, 4.74, 2.85
+>>> Completed (36 of 70) dev-util/hyprwayland-scanner-0.4.6::hyproverlay
+>>> Jobs: 35 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Jobs: 36 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Installing (37 of 70) dev-libs/libgit2-1.9.4::gentoo
+>>> Jobs: 36 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Completed (38 of 70) dev-libs/re2-2025.08.12::gentoo
+>>> Jobs: 36 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Jobs: 37 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Installing (40 of 70) gui-libs/hyprutils-0.13.1::hyproverlay
+>>> Jobs: 37 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Completed (37 of 70) dev-libs/libgit2-1.9.4::gentoo
+>>> Jobs: 37 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Jobs: 38 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Installing (41 of 70) x11-libs/libXau-1.0.12::gentoo
+>>> Jobs: 38 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Completed (40 of 70) gui-libs/hyprutils-0.13.1::hyproverlay
+>>> Jobs: 38 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Jobs: 39 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Installing (42 of 70) x11-libs/libXdmcp-1.1.5::gentoo
+>>> Jobs: 39 of 70 complete                                             Load avg: 4.18, 4.69, 2.85
+>>> Completed (41 of 70) x11-libs/libXau-1.0.12::gentoo
+>>> Jobs: 39 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Jobs: 40 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Installing (43 of 70) media-libs/openjpeg-2.5.4-r1::gentoo
+>>> Jobs: 40 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Completed (42 of 70) x11-libs/libXdmcp-1.1.5::gentoo
+>>> Jobs: 40 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Jobs: 41 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Installing (44 of 70) dev-libs/libinput-1.31.3::gentoo
+>>> Jobs: 41 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Completed (43 of 70) media-libs/openjpeg-2.5.4-r1::gentoo
+>>> Jobs: 41 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Jobs: 42 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Installing (45 of 70) x11-libs/gdk-pixbuf-2.42.12::gentoo
+>>> Jobs: 42 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Completed (44 of 70) dev-libs/libinput-1.31.3::gentoo
+>>> Jobs: 42 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Jobs: 43 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Installing (39 of 70) media-libs/libaom-3.12.1::gentoo
+>>> Jobs: 43 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Completed (45 of 70) x11-libs/gdk-pixbuf-2.42.12::gentoo
+>>> Jobs: 43 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Jobs: 44 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Installing (46 of 70) dev-lang/vala-0.56.19::gentoo
+>>> Jobs: 44 of 70 complete                                             Load avg: 4.00, 4.65, 2.84
+>>> Completed (39 of 70) media-libs/libaom-3.12.1::gentoo
+>>> Jobs: 44 of 70 complete                                             Load avg: 3.92, 4.62, 2.84
+>>> Jobs: 45 of 70 complete                                             Load avg: 3.92, 4.62, 2.84
+>>> Completed (46 of 70) dev-lang/vala-0.56.19::gentoo
+>>> Jobs: 45 of 70 complete                                             Load avg: 3.92, 4.62, 2.84
+>>> Jobs: 46 of 70 complete                                             Load avg: 3.92, 4.62, 2.84
+>>> Jobs: 46 of 70 complete, 1 running                                  Load avg: 3.92, 4.62, 2.84
+>>> Emerging (47 of 70) media-libs/freetype-2.14.3::gentoo
+>>> Jobs: 46 of 70 complete, 1 running                                  Load avg: 3.92, 4.62, 2.84
+>>> Jobs: 46 of 70 complete, 2 running                                  Load avg: 3.92, 4.62, 2.84
+>>> Emerging (48 of 70) dev-util/cargo-c-0.10.22-r1::gentoo
+>>> Jobs: 46 of 70 complete, 2 running                                  Load avg: 3.92, 4.62, 2.84
+>>> Jobs: 46 of 70 complete, 1 running                                  Load avg: 6.64, 5.22, 3.12
+>>> Jobs: 46 of 70 complete, 2 running, 1 merge wait                    Load avg: 6.64, 5.22, 3.12
+>>> Emerging (49 of 70) x11-libs/libxcb-1.17.0::gentoo
+>>> Jobs: 46 of 70 complete, 2 running, 1 merge wait                    Load avg: 6.64, 5.22, 3.12
+>>> Jobs: 46 of 70 complete, 1 running, 1 merge wait                    Load avg: 8.67, 5.99, 3.50
+>>> Jobs: 46 of 70 complete, 2 running, 2 merge wait                    Load avg: 8.67, 5.99, 3.50
+>>> Emerging (50 of 70) dev-libs/hyprlang-0.6.8::hyproverlay
+>>> Jobs: 46 of 70 complete, 2 running, 2 merge wait                    Load avg: 8.67, 5.99, 3.50
+>>> Jobs: 46 of 70 complete, 1 running, 2 merge wait                    Load avg: 9.07, 6.30, 3.66
+>>> Jobs: 46 of 70 complete, 2 running, 3 merge wait                    Load avg: 9.07, 6.30, 3.66
+>>> Emerging (51 of 70) gui-libs/hyprwire-0.3.1::hyproverlay
+>>> Jobs: 46 of 70 complete, 2 running, 3 merge wait                    Load avg: 9.07, 6.30, 3.66
+>>> Jobs: 46 of 70 complete, 1 running, 3 merge wait                    Load avg: 10.2, 6.9, 4.0
+>>> Jobs: 46 of 70 complete, 2 running, 4 merge wait                    Load avg: 10.2, 6.9, 4.0
+>>> Emerging (52 of 70) media-libs/libheif-1.21.2::gentoo
+>>> Jobs: 46 of 70 complete, 2 running, 4 merge wait                    Load avg: 10.2, 6.9, 4.0
+>>> Jobs: 46 of 70 complete, 1 running, 4 merge wait                    Load avg: 10.3, 8.3, 5.0
+>>> Jobs: 46 of 70 complete, 2 running, 5 merge wait                    Load avg: 10.3, 8.3, 5.0
+>>> Emerging (53 of 70) media-libs/libjxl-0.11.2::gentoo
+>>> Jobs: 46 of 70 complete, 2 running, 5 merge wait                    Load avg: 10.3, 8.3, 5.0
+>>> Jobs: 46 of 70 complete, 1 running, 5 merge wait                    Load avg: 10.1, 8.6, 5.2
+>>> Jobs: 46 of 70 complete, 6 merge wait                               Load avg: 5.36, 7.63, 5.23
+>>> Installing (47 of 70) media-libs/freetype-2.14.3::gentoo
+>>> Jobs: 46 of 70 complete, 7 merge wait                               Load avg: 5.36, 7.63, 5.23
+>>> Installing (49 of 70) x11-libs/libxcb-1.17.0::gentoo
+>>> Jobs: 46 of 70 complete, 7 merge wait                               Load avg: 5.36, 7.63, 5.23
+>>> Completed (49 of 70) x11-libs/libxcb-1.17.0::gentoo
+>>> Jobs: 46 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Installing (50 of 70) dev-libs/hyprlang-0.6.8::hyproverlay
+>>> Jobs: 46 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Jobs: 47 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Completed (47 of 70) media-libs/freetype-2.14.3::gentoo
+>>> Jobs: 47 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Installing (51 of 70) gui-libs/hyprwire-0.3.1::hyproverlay
+>>> Jobs: 47 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Jobs: 48 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Completed (50 of 70) dev-libs/hyprlang-0.6.8::hyproverlay
+>>> Jobs: 48 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Jobs: 49 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Installing (52 of 70) media-libs/libheif-1.21.2::gentoo
+>>> Jobs: 49 of 70 complete                                             Load avg: 5.17, 7.55, 5.22
+>>> Completed (51 of 70) gui-libs/hyprwire-0.3.1::hyproverlay
+>>> Jobs: 49 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Jobs: 50 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Installing (48 of 70) dev-util/cargo-c-0.10.22-r1::gentoo
+>>> Jobs: 50 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Completed (52 of 70) media-libs/libheif-1.21.2::gentoo
+>>> Jobs: 50 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Jobs: 51 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Installing (53 of 70) media-libs/libjxl-0.11.2::gentoo
+>>> Jobs: 51 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Completed (48 of 70) dev-util/cargo-c-0.10.22-r1::gentoo
+>>> Jobs: 51 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Jobs: 52 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Completed (53 of 70) media-libs/libjxl-0.11.2::gentoo
+>>> Jobs: 52 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Jobs: 53 of 70 complete                                             Load avg: 4.99, 7.48, 5.21
+>>> Jobs: 53 of 70 complete, 1 running                                  Load avg: 4.99, 7.48, 5.21
+>>> Emerging (54 of 70) media-libs/fontconfig-2.18.1::gentoo
+>>> Jobs: 53 of 70 complete, 1 running                                  Load avg: 4.99, 7.48, 5.21
+>>> Jobs: 53 of 70 complete, 2 running                                  Load avg: 4.67, 7.37, 5.18
+>>> Emerging (55 of 70) x11-misc/compose-tables-1.8.13::gentoo
+>>> Jobs: 53 of 70 complete, 2 running                                  Load avg: 4.67, 7.37, 5.18
+>>> Jobs: 53 of 70 complete, 1 running                                  Load avg: 4.26, 7.19, 5.15
+>>> Jobs: 53 of 70 complete, 1 merge wait                               Load avg: 4.00, 7.09, 5.13
+>>> Installing (55 of 70) x11-misc/compose-tables-1.8.13::gentoo
+>>> Jobs: 53 of 70 complete, 2 merge wait                               Load avg: 4.00, 7.09, 5.13
+>>> Installing (54 of 70) media-libs/fontconfig-2.18.1::gentoo
+>>> Jobs: 53 of 70 complete, 2 merge wait                               Load avg: 4.00, 7.09, 5.13
+>>> Completed (55 of 70) x11-misc/compose-tables-1.8.13::gentoo
+>>> Jobs: 53 of 70 complete                                             Load avg: 3.76, 6.99, 5.10
+>>> Jobs: 54 of 70 complete                                             Load avg: 3.76, 6.99, 5.10
+>>> Completed (54 of 70) media-libs/fontconfig-2.18.1::gentoo
+>>> Jobs: 54 of 70 complete                                             Load avg: 3.76, 6.99, 5.10
+>>> Jobs: 55 of 70 complete                                             Load avg: 3.76, 6.99, 5.10
+>>> Jobs: 55 of 70 complete, 1 running                                  Load avg: 3.76, 6.99, 5.10
+>>> Emerging (56 of 70) x11-libs/libX11-1.8.13::gentoo
+>>> Jobs: 55 of 70 complete, 1 running                                  Load avg: 3.76, 6.99, 5.10
+>>> Jobs: 55 of 70 complete, 2 running                                  Load avg: 3.76, 6.99, 5.10
+>>> Emerging (57 of 70) x11-libs/libxkbcommon-1.13.2::gentoo
+>>> Jobs: 55 of 70 complete, 2 running                                  Load avg: 3.76, 6.99, 5.10
+>>> Jobs: 55 of 70 complete, 1 running                                  Load avg: 4.29, 6.89, 5.11
+>>> Jobs: 55 of 70 complete, 2 running, 1 merge wait                    Load avg: 4.29, 6.89, 5.11
+>>> Emerging (58 of 70) x11-libs/cairo-1.18.4-r1::gentoo
+>>> Jobs: 55 of 70 complete, 2 running, 1 merge wait                    Load avg: 4.29, 6.89, 5.11
+>>> Jobs: 55 of 70 complete, 1 running, 1 merge wait                    Load avg: 4.75, 6.84, 5.13
+>>> Jobs: 55 of 70 complete, 2 merge wait                               Load avg: 4.18, 6.64, 5.09
+>>> Installing (57 of 70) x11-libs/libxkbcommon-1.13.2::gentoo
+>>> Jobs: 55 of 70 complete, 3 merge wait                               Load avg: 4.18, 6.64, 5.09
+>>> Installing (56 of 70) x11-libs/libX11-1.8.13::gentoo
+>>> Jobs: 55 of 70 complete, 3 merge wait                               Load avg: 4.18, 6.64, 5.09
+>>> Completed (57 of 70) x11-libs/libxkbcommon-1.13.2::gentoo
+>>> Jobs: 55 of 70 complete                                             Load avg: 4.00, 6.57, 5.07
+>>> Installing (58 of 70) x11-libs/cairo-1.18.4-r1::gentoo
+>>> Jobs: 55 of 70 complete                                             Load avg: 4.00, 6.57, 5.07
+>>> Jobs: 56 of 70 complete                                             Load avg: 4.00, 6.57, 5.07
+>>> Completed (56 of 70) x11-libs/libX11-1.8.13::gentoo
+>>> Jobs: 56 of 70 complete                                             Load avg: 4.00, 6.57, 5.07
+>>> Jobs: 57 of 70 complete                                             Load avg: 4.00, 6.57, 5.07
+>>> Completed (58 of 70) x11-libs/cairo-1.18.4-r1::gentoo
+>>> Jobs: 57 of 70 complete                                             Load avg: 4.00, 6.57, 5.07
+>>> Jobs: 58 of 70 complete                                             Load avg: 4.00, 6.57, 5.07
+>>> Jobs: 58 of 70 complete, 1 running                                  Load avg: 4.00, 6.57, 5.07
+>>> Emerging (59 of 70) x11-libs/libXrender-0.9.12::gentoo
+>>> Jobs: 58 of 70 complete, 1 running                                  Load avg: 4.00, 6.57, 5.07
+>>> Jobs: 58 of 70 complete, 2 running                                  Load avg: 4.00, 6.57, 5.07
+>>> Emerging (60 of 70) x11-libs/libXfixes-6.0.2::gentoo
+>>> Jobs: 58 of 70 complete, 2 running                                  Load avg: 4.00, 6.57, 5.07
+>>> Jobs: 58 of 70 complete, 1 running                                  Load avg: 3.69, 6.41, 5.04
+>>> Jobs: 58 of 70 complete, 2 running, 1 merge wait                    Load avg: 3.69, 6.41, 5.04
+>>> Emerging (61 of 70) media-libs/harfbuzz-12.3.2::gentoo
+>>> Jobs: 58 of 70 complete, 2 running, 1 merge wait                    Load avg: 3.69, 6.41, 5.04
+>>> Jobs: 58 of 70 complete, 1 running, 1 merge wait                    Load avg: 3.69, 6.41, 5.04
+>>> Jobs: 58 of 70 complete, 2 merge wait                               Load avg: 4.49, 6.20, 5.07
+>>> Installing (60 of 70) x11-libs/libXfixes-6.0.2::gentoo
+>>> Jobs: 58 of 70 complete, 3 merge wait                               Load avg: 4.49, 6.20, 5.07
+>>> Installing (59 of 70) x11-libs/libXrender-0.9.12::gentoo
+>>> Jobs: 58 of 70 complete, 3 merge wait                               Load avg: 4.21, 6.11, 5.05
+>>> Completed (60 of 70) x11-libs/libXfixes-6.0.2::gentoo
+>>> Jobs: 58 of 70 complete                                             Load avg: 4.21, 6.11, 5.05
+>>> Installing (61 of 70) media-libs/harfbuzz-12.3.2::gentoo
+>>> Jobs: 58 of 70 complete                                             Load avg: 4.21, 6.11, 5.05
+>>> Jobs: 59 of 70 complete                                             Load avg: 4.21, 6.11, 5.05
+>>> Completed (59 of 70) x11-libs/libXrender-0.9.12::gentoo
+>>> Jobs: 59 of 70 complete                                             Load avg: 4.21, 6.11, 5.05
+>>> Jobs: 60 of 70 complete                                             Load avg: 4.21, 6.11, 5.05
+>>> Completed (61 of 70) media-libs/harfbuzz-12.3.2::gentoo
+>>> Jobs: 60 of 70 complete                                             Load avg: 4.21, 6.11, 5.05
+>>> Jobs: 61 of 70 complete                                             Load avg: 4.21, 6.11, 5.05
+>>> Jobs: 61 of 70 complete, 1 running                                  Load avg: 4.21, 6.11, 5.05
+>>> Emerging (62 of 70) x11-libs/libXcursor-1.2.3::gentoo
+>>> Jobs: 61 of 70 complete, 1 running                                  Load avg: 4.21, 6.11, 5.05
+>>> Jobs: 61 of 70 complete, 2 running                                  Load avg: 3.87, 6.01, 5.02
+>>> Emerging (63 of 70) x11-libs/pango-1.57.1::gentoo
+>>> Jobs: 61 of 70 complete, 2 running                                  Load avg: 3.87, 6.01, 5.02
+>>> Jobs: 61 of 70 complete, 1 running                                  Load avg: 4.14, 6.00, 5.02
+>>> Jobs: 61 of 70 complete, 1 merge wait                               Load avg: 3.73, 5.85, 4.99
+>>> Installing (62 of 70) x11-libs/libXcursor-1.2.3::gentoo
+>>> Jobs: 61 of 70 complete, 2 merge wait                               Load avg: 3.73, 5.85, 4.99
+>>> Installing (63 of 70) x11-libs/pango-1.57.1::gentoo
+>>> Jobs: 61 of 70 complete, 2 merge wait                               Load avg: 3.73, 5.85, 4.99
+>>> Completed (62 of 70) x11-libs/libXcursor-1.2.3::gentoo
+>>> Jobs: 61 of 70 complete                                             Load avg: 3.73, 5.85, 4.99
+>>> Jobs: 62 of 70 complete                                             Load avg: 3.73, 5.85, 4.99
+>>> Completed (63 of 70) x11-libs/pango-1.57.1::gentoo
+>>> Jobs: 62 of 70 complete                                             Load avg: 3.73, 5.85, 4.99
+>>> Jobs: 63 of 70 complete                                             Load avg: 3.73, 5.85, 4.99
+>>> Jobs: 63 of 70 complete, 1 running                                  Load avg: 3.73, 5.85, 4.99
+>>> Emerging (64 of 70) gui-libs/aquamarine-0.12.1::hyproverlay
+>>> Jobs: 63 of 70 complete, 1 running                                  Load avg: 3.73, 5.85, 4.99
+>>> Jobs: 63 of 70 complete, 2 running                                  Load avg: 3.51, 5.77, 4.96
+>>> Emerging (65 of 70) gnome-base/librsvg-2.62.2-r1::gentoo
+>>> Jobs: 63 of 70 complete, 2 running                                  Load avg: 3.51, 5.77, 4.96
+>>> Jobs: 63 of 70 complete, 1 running                                  Load avg: 5.74, 6.06, 5.09
+>>> Jobs: 63 of 70 complete, 1 merge wait                               Load avg: 4.52, 5.84, 5.21
+>>> Installing (64 of 70) gui-libs/aquamarine-0.12.1::hyproverlay
+>>> Jobs: 63 of 70 complete, 2 merge wait                               Load avg: 4.52, 5.84, 5.21
+>>> Installing (65 of 70) gnome-base/librsvg-2.62.2-r1::gentoo
+>>> Jobs: 63 of 70 complete, 2 merge wait                               Load avg: 4.52, 5.84, 5.21
+>>> Completed (64 of 70) gui-libs/aquamarine-0.12.1::hyproverlay
+>>> Jobs: 63 of 70 complete                                             Load avg: 4.15, 5.74, 5.19
+>>> Jobs: 64 of 70 complete                                             Load avg: 4.15, 5.74, 5.19
+>>> Completed (65 of 70) gnome-base/librsvg-2.62.2-r1::gentoo
+>>> Jobs: 64 of 70 complete                                             Load avg: 4.15, 5.74, 5.19
+>>> Jobs: 65 of 70 complete                                             Load avg: 4.15, 5.74, 5.19
+>>> Jobs: 65 of 70 complete, 1 running                                  Load avg: 4.15, 5.74, 5.19
+>>> Emerging (66 of 70) dev-libs/hyprgraphics-0.5.1-r1::hyproverlay
+>>> Jobs: 65 of 70 complete, 1 running                                  Load avg: 4.15, 5.74, 5.19
+>>> Jobs: 65 of 70 complete, 2 running                                  Load avg: 4.15, 5.74, 5.19
+>>> Emerging (67 of 70) gui-libs/hyprcursor-0.1.13-r1::hyproverlay
+>>> Jobs: 65 of 70 complete, 2 running                                  Load avg: 4.15, 5.74, 5.19
+>>> Jobs: 65 of 70 complete, 1 running                                  Load avg: 4.81, 5.81, 5.22
+>>> Jobs: 65 of 70 complete, 1 merge wait                               Load avg: 4.81, 5.81, 5.22
+>>> Installing (66 of 70) dev-libs/hyprgraphics-0.5.1-r1::hyproverlay
+>>> Jobs: 65 of 70 complete, 2 merge wait                               Load avg: 4.81, 5.81, 5.22
+>>> Installing (67 of 70) gui-libs/hyprcursor-0.1.13-r1::hyproverlay
+>>> Jobs: 65 of 70 complete, 2 merge wait                               Load avg: 4.81, 5.81, 5.22
+>>> Completed (66 of 70) dev-libs/hyprgraphics-0.5.1-r1::hyproverlay
+>>> Jobs: 65 of 70 complete                                             Load avg: 4.50, 5.73, 5.20
+>>> Jobs: 66 of 70 complete                                             Load avg: 4.50, 5.73, 5.20
+>>> Completed (67 of 70) gui-libs/hyprcursor-0.1.13-r1::hyproverlay
+>>> Jobs: 66 of 70 complete                                             Load avg: 4.50, 5.73, 5.20
+>>> Jobs: 67 of 70 complete                                             Load avg: 4.50, 5.73, 5.20
+>>> Jobs: 67 of 70 complete, 1 running                                  Load avg: 4.50, 5.73, 5.20
+>>> Emerging (68 of 70) gui-libs/hyprtoolkit-0.5.4::hyproverlay
+>>> Jobs: 67 of 70 complete, 1 running                                  Load avg: 4.50, 5.73, 5.20
+>>> Jobs: 67 of 70 complete                                             Load avg: 4.51, 5.61, 5.18
+>>> Installing (68 of 70) gui-libs/hyprtoolkit-0.5.4::hyproverlay
+>>> Jobs: 67 of 70 complete, 1 merge wait                               Load avg: 4.51, 5.61, 5.18
+>>> Completed (68 of 70) gui-libs/hyprtoolkit-0.5.4::hyproverlay
+>>> Jobs: 67 of 70 complete                                             Load avg: 4.51, 5.61, 5.18
+>>> Jobs: 68 of 70 complete                                             Load avg: 4.51, 5.61, 5.18
+>>> Jobs: 68 of 70 complete, 1 running                                  Load avg: 4.51, 5.61, 5.18
+>>> Emerging (69 of 70) gui-libs/hyprland-guiutils-0.2.1::hyproverlay
+>>> Jobs: 68 of 70 complete, 1 running                                  Load avg: 4.51, 5.61, 5.18
+>>> Jobs: 68 of 70 complete                                             Load avg: 3.95, 5.43, 5.13
+>>> Installing (69 of 70) gui-libs/hyprland-guiutils-0.2.1::hyproverlay
+>>> Jobs: 68 of 70 complete, 1 merge wait                               Load avg: 3.95, 5.43, 5.13
+>>> Completed (69 of 70) gui-libs/hyprland-guiutils-0.2.1::hyproverlay
+>>> Jobs: 68 of 70 complete                                             Load avg: 3.95, 5.43, 5.13
+>>> Jobs: 69 of 70 complete                                             Load avg: 3.95, 5.43, 5.13
+>>> Jobs: 69 of 70 complete, 1 running                                  Load avg: 3.95, 5.43, 5.13
+>>> Emerging (70 of 70) gui-wm/hyprland-0.55.4::hyproverlay
+>>> Jobs: 69 of 70 complete, 1 running                                  Load avg: 3.95, 5.43, 5.13
+>>> Jobs: 69 of 70 complete                                             Load avg: 5.80, 6.52, 5.74
+>>> Installing (70 of 70) gui-wm/hyprland-0.55.4::hyproverlay
+>>> Jobs: 69 of 70 complete, 1 merge wait                               Load avg: 5.80, 6.52, 5.74
+>>> Recording gui-wm/hyprland in "world" favorites file...
+>>> Jobs: 69 of 70 complete                                             Load avg: 5.42, 6.43, 5.71
+>>> Completed (70 of 70) gui-wm/hyprland-0.55.4::hyproverlay
+>>> Jobs: 69 of 70 complete                                             Load avg: 5.42, 6.43, 5.71
+>>> Jobs: 70 of 70 complete                                             Load avg: 5.42, 6.43, 5.71
+
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 5 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+HYPRLAND_RC=0

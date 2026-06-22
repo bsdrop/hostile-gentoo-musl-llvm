@@ -1,0 +1,67 @@
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+
+These are the packages that would be merged, in order:
+
+Calculating dependencies  ... done!
+Dependency resolution took 0.85 s (backtrack: 0/20).
+
+[ebuild  N     ] dev-util/vulkan-headers-1.4.350.0::gentoo  USE="-test" 3195 KiB
+[ebuild  N     ] media-libs/vulkan-loader-1.4.350.0::gentoo  USE="wayland -X" 1758 KiB
+[ebuild  N     ] gui-libs/wlroots-0.20.1:0.20::gentoo  USE="drm libinput session vulkan -X -lcms -liftoff -verify-sig -x11-backend -xcb-errors" 685 KiB
+[ebuild  N     ] gui-wm/sway-1.12::gentoo  USE="filecaps swaybar swaynag -X -tray -verify-sig -wallpapers" 5507 KiB
+
+Total: 4 packages (4 new), Size of downloads: 11144 KiB
+>>> Verifying ebuild manifests
+
+>>> Jobs: 0 of 4 complete, 1 running                                    Load avg: 0.23, 0.06, 0.02
+>>> Emerging (1 of 4) dev-util/vulkan-headers-1.4.350.0::gentoo
+>>> Jobs: 0 of 4 complete, 1 running                                    Load avg: 0.23, 0.06, 0.02
+>>> Jobs: 0 of 4 complete                                               Load avg: 0.30, 0.08, 0.02
+>>> Installing (1 of 4) dev-util/vulkan-headers-1.4.350.0::gentoo
+>>> Jobs: 0 of 4 complete, 1 merge wait                                 Load avg: 0.30, 0.08, 0.02
+>>> Completed (1 of 4) dev-util/vulkan-headers-1.4.350.0::gentoo
+>>> Jobs: 0 of 4 complete                                               Load avg: 0.43, 0.11, 0.04
+>>> Jobs: 1 of 4 complete                                               Load avg: 0.43, 0.11, 0.04
+>>> Jobs: 1 of 4 complete, 1 running                                    Load avg: 0.43, 0.11, 0.04
+>>> Emerging (2 of 4) media-libs/vulkan-loader-1.4.350.0::gentoo
+>>> Jobs: 1 of 4 complete, 1 running                                    Load avg: 0.43, 0.11, 0.04
+>>> Jobs: 1 of 4 complete                                               Load avg: 0.44, 0.12, 0.04
+>>> Installing (2 of 4) media-libs/vulkan-loader-1.4.350.0::gentoo
+>>> Jobs: 1 of 4 complete, 1 merge wait                                 Load avg: 0.44, 0.12, 0.04
+>>> Completed (2 of 4) media-libs/vulkan-loader-1.4.350.0::gentoo
+>>> Jobs: 1 of 4 complete                                               Load avg: 0.44, 0.12, 0.04
+>>> Jobs: 2 of 4 complete                                               Load avg: 0.44, 0.12, 0.04
+>>> Jobs: 2 of 4 complete, 1 running                                    Load avg: 0.44, 0.12, 0.04
+>>> Emerging (3 of 4) gui-libs/wlroots-0.20.1::gentoo
+>>> Jobs: 2 of 4 complete, 1 running                                    Load avg: 0.44, 0.12, 0.04
+>>> Jobs: 2 of 4 complete                                               Load avg: 1.07, 0.29, 0.10
+>>> Installing (3 of 4) gui-libs/wlroots-0.20.1::gentoo
+>>> Jobs: 2 of 4 complete, 1 merge wait                                 Load avg: 1.07, 0.29, 0.10
+>>> Completed (3 of 4) gui-libs/wlroots-0.20.1::gentoo
+>>> Jobs: 2 of 4 complete                                               Load avg: 1.07, 0.29, 0.10
+>>> Jobs: 3 of 4 complete                                               Load avg: 1.07, 0.29, 0.10
+>>> Jobs: 3 of 4 complete, 1 running                                    Load avg: 1.07, 0.29, 0.10
+>>> Emerging (4 of 4) gui-wm/sway-1.12::gentoo
+>>> Jobs: 3 of 4 complete, 1 running                                    Load avg: 1.07, 0.29, 0.10
+>>> Jobs: 3 of 4 complete                                               Load avg: 1.96, 0.57, 0.20
+>>> Installing (4 of 4) gui-wm/sway-1.12::gentoo
+>>> Jobs: 3 of 4 complete, 1 merge wait                                 Load avg: 1.96, 0.57, 0.20
+>>> Recording gui-wm/sway in "world" favorites file...
+>>> Jobs: 3 of 4 complete                                               Load avg: 1.96, 0.57, 0.20
+>>> Completed (4 of 4) gui-wm/sway-1.12::gentoo
+>>> Jobs: 3 of 4 complete                                               Load avg: 1.96, 0.57, 0.20
+>>> Jobs: 4 of 4 complete                                               Load avg: 1.96, 0.57, 0.20
+
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 5 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+

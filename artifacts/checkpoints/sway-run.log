@@ -1,0 +1,8 @@
+libEGL warning: egl: failed to create dri2 screen
+00:00:00.073 [ERROR] [wlr] [EGL] command: eglInitialize, error: EGL_NOT_INITIALIZED (0x3001), message: "DRI2: failed to create screen"
+libEGL warning: egl: failed to create dri2 screen
+00:00:00.075 [ERROR] [wlr] [EGL] command: eglInitialize, error: EGL_NOT_INITIALIZED (0x3001), message: "DRI2: failed to create screen"
+libEGL warning: NEEDS EXTENSION: falling back to kms_swrast
+00:00:00.080 [ERROR] [wlr] [EGL] command: eglQueryDeviceStringEXT, error: EGL_BAD_DEVICE_EXT (0x322b), message: "eglQueryDeviceStringEXT"
+00:00:00.080 [ERROR] [wlr] [EGL] command: eglQueryDeviceStringEXT, error: EGL_BAD_DEVICE_EXT (0x322b), message: "eglQueryDeviceStringEXT"
+00:00:00.128 [ERROR] [sway/config/output.c:1221] failed to execute 'swaybg' (background configuration probably not applied): No such file or directory

@@ -13,3 +13,10 @@ sec-policy/selinux-base   notest.conf
 # setuptools slot conflicts, pyqt6 testlib). Disable python TEST SUITES only; C/C++ tests stay on.
 dev-python/*  notest.conf
 sys-process/audit  notest.conf
+# E21: FEATURES=test forces test USE across Qt6/KDE -> pervasive test?(...) REQUIRED_USE conflicts
+# (qtbase test?(icu), qtmultimedia, etc.). Disable test suites for the Qt6/KDE desktop stack only.
+dev-qt/*           notest.conf
+kde-frameworks/*   notest.conf
+kde-plasma/*       notest.conf
+kde-apps/*         notest.conf
+kde-misc/*         notest.conf

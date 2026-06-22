@@ -72,12 +72,46 @@ Failures (identical in both passes):
 y), but kernel-7.1 ships no `linux/rose.h` (only `ax25.h`). Not a musl issue. Fixed by disabling
 ROSE in config.in (`/etc/portage/bashrc` hook). Reportable: net-tools has no USE/toggle for ROSE.
 
+## F9 — desktops blocked on musl by the logind wall (GNOME *and* KDE)
+Modern full DEs hard-require a logind provider (`elogind` or `systemd`); on musl `elogind` is
+unbuildable (F4/E14: gshadow.h) and systemd is prohibited, so:
+- **GNOME** (E19): mutter[wayland] `^^(elogind systemd)`; also forces X11 + PulseAudio.
+- **KDE Plasma** (E22): `plasma-workspace` *unconditionally* deps `networkmanager-qt` → `networkmanager[elogind]`;
+  also `accountsservice` `^^(elogind systemd)`. Resolved 277 pkgs otherwise (qt6+X stack), but the
+  logind dep is not USE-removable. *Better than GNOME on one axis:* with `FEATURES=-test` KDE needs only
+  X **client** libs + XWayland, **no xorg-server** (the xorg-server pull was a `libglvnd[test,X]→xvfb`
+  test artifact). Working wlroots compositors (Hyprland, sway) avoid this because they use **seatd**, not logind.
+
+## F10 — firefox on musl: static rust-bin can't dlopen libclang (bindgen)
+firefox builds gcc/nodejs but `mach build` dies: bindgen panics `Unable to find libclang ... Dynamic
+loading not supported` — the toolchain's `rust-bin` is statically linked (musl), and static musl can't
+`dlopen()`. Fix path: dev-lang/rust from SOURCE (dynamic) MATCHED to firefox's LLVM slot (firefox-152
+wants LLVM 21; our source rust was LLVM 22). Deferred (browsers = "later"). (E20.)
+
+## F11 — self-induced: `-Wl,--icf=safe` (lld-only) breaks the GCC bootstrap
+The E16 hardening LDFLAGS added `--icf=safe`; GCC's libgcc links via GNU ld (not lld), which rejects
+it → gcc-16 fails → cascades. Lesson: lld-only flags in global LDFLAGS break any GNU-ld build. Removed it.
+
+## F12 — full-LTO + KCFI hardened kernel: SUCCESS (the headline positive)
+Two full `emerge -e @world` passes (full `-flto`, then +`-O3`/CET/stack-clash/auto-var-init/zero-call-regs)
+both boot with ZERO new failures; toolchain (clang/llvm 22) rebuilt under full LTO. A clang-built kernel
+with **KCFI** (`CONFIG_CFI`, kernel 7.1 renamed from `CONFIG_CFI_CLANG`) + `LTO_CLANG` + lockdown=confidentiality
++ all CPU side-channel mitigations boots and runs (`dmesg: CFI: Using rehashed retpoline kCFI`).
+(gcc-plugin STACKLEAK/RANDSTRUCT are N/A under clang — KCFI/LTO substitute.) Snapshot `hardened-kernel-kcfi`.
+
 ## Open / in-progress / roadmap
 Done in order; each stage snapshots before the next so failures are recoverable.
 Snapshots so far: `base-musl-llvm-selinux-wayland`, `base-full-lto`, `base-full-lto-hardened`.
 
 1. **Full-LTO `@world`:** ✅ done (snapshot `base-full-lto`); extra-hardening pass ✅ done
    (snapshot `base-full-lto-hardened`). See [06-full-lto.md](06-full-lto.md) and F7 above.
+2. **Hyprland** (via third-party `hyproverlay`; XWayland off, `-X`) — in progress.
+3. **wlroots + sway** — also XWayland off (`-X`).
+4. **Wayland session/portal stack** — pipewire / seatd / xdg-desktop-portal-wlr.
+5. **SELinux → enforcing** — switch from permissive after reviewing AVC denials.
+6. **GNOME** — plus a **comparison experiment**: everything so far is `-X` (no XWayland); also test
+   GNOME with `+X`/XWayland enabled to see whether X11/XWayland actually works better than pure Wayland.
+7. **Browsers** — ≥1 per family (Firefox: Mullvad/Tor/LibreWolf; Chromium: Trivalent/Cromite/Brave).
 2. **Hyprland** (compositor, the "B" goal): heavy C++ Wayland stack — a strong combined test of
    full-LTO + musl + clang. Attempted on the full-LTO base.
 3. **GNOME:** stretch goal. Known to fail even on Arch per the user, so this is expected to be a

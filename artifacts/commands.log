@@ -25,3 +25,31 @@
 [21:30:15] removed invalid FEATURES=stricter (no-op token); doc corrected
 [21:39:01] TODO(post-build): fix net-tools rose.h via post_src_configure hook disabling HAVE_AFROSE/HAVE_HWROSE (kernel-7.1 UAPI lacks linux/rose.h); document as E17
 [22:28:42] E17 net-tools ROSE fix done (RC=0, hardening flags applied); relabel + snapshot base-full-lto-hardened
+[22:32:38] install eselect-repository + enable GURU for hyprland
+[22:33:27] syncing GURU overlay
+[22:35:32] enable+sync hyproverlay for Hyprland
+[22:37:42] HYPRLAND build START (-X, FEATURES=-test, ~70 pkgs)
+[23:14:46] Hyprland DRM backend run test (virtio-gpu)
+[23:15:40] HYPRLAND RUNS: hyprctl monitors shows Virtual-1@drm, wayland-1 socket created (kms_swrast fallback, no virgl)
+[23:17:58] sway+wlroots build (-X, FEATURES=-test)
+[23:19:27] sway DRM run test
+[23:19:59] SWAY RUNS: swaymsg get_outputs ok (1280x800), wlroots 0.20.1 drm backend, kms_swrast
+[23:20:34] xdg-desktop-portal-wlr stack build (-elogind, basu, FEATURES=-test)
+[23:24:30] portal stack done; auditd enabled; enforcing deferred to capstone (after GNOME/browsers). AVC preview saved.
+[23:31:13] GNOME = blocked (elogind/musl + forces X11 + PulseAudio). Documented E19. Reverted experiment overrides.
+[23:34:02] FIREFOX build START (wayland,-X,-pulseaudio,hardened; FEATURES=-test; pulls gcc16+nodejs+rust)
+[23:36:45] firefox build (real) start: libvpx postproc added
+[23:59:47] E16-FIX: dropped lld-only --icf=safe from LDFLAGS (broke gcc/GNU-ld); rebuild firefox(+gcc)
+[02:09:44] prepared kernel-hardened.fragment (CFI_CLANG+LTO_CLANG+lockdown+kstack-rand+iommu-strict etc); build after firefox
+[03:29:58] FIREFOX finding: static rust-bin dlopen(libclang) fails on musl; fix=source rust (deferred). Next: hardened kernel build.
+[03:31:26] hardened kernel cmdline set (KSPP + max mitigations + lockdown=confidentiality); building hardened kernel (CFI_CLANG+LTO_CLANG)
+[03:44:43] grub-mkconfig with hardened cmdline; rebooting into hardened kernel
+[03:46:34] enable CONFIG_CFI=y (KCFI, 7.1 naming); rebuild hardened kernel
+[04:01:11] reboot into KCFI kernel
+[04:02:09] KCFI kernel boots OK (CFI active, lockdown=confidentiality). snapshot.
+[04:07:50] source-rust (dev-lang/rust-1.95, dynamic rustc) build start
+[05:03:05] firefox retry with dynamic source rustc (rust-1.95.0)
+[05:16:32] removed rust-bin; firefox retry (force dynamic source rust)
+[05:17:33] firefox deferred (needs dynamic rust@LLVM21; ~3-4h). priority: KDE (decision A) next.
+[05:17:55] KDE: autounmask-write plasma-desktop (enable X for stack)
+[05:32:59] KDE = BLOCKED (plasma-workspace->networkmanager-qt->networkmanager[elogind]; musl elogind unbuildable). Same logind wall as GNOME. E22.

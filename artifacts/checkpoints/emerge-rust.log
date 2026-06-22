@@ -1,0 +1,51 @@
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+
+These are the packages that would be merged, in order:
+
+Calculating dependencies  ... done!
+Dependency resolution took 1.92 s (backtrack: 1/20).
+
+[ebuild  N     ] dev-lang/rust-common-1.95.0::gentoo  USE="-verify-sig" 233352 KiB
+[ebuild  N     ] dev-lang/rust-1.95.0:1.95.0::gentoo  USE="clippy doc (llvm-libunwind) lto rustfmt system-llvm (-big-endian) -debug -dist -rust-analyzer -rust-src -test -verify-sig" CPU_FLAGS_X86="sse2" LLVM_SLOT="22" LLVM_TARGETS="(X86) -AArch64 -AMDGPU -ARC -ARM -AVR -BPF -CSKY -DirectX -Hexagon -Lanai -LoongArch -M68k -MSP430 -Mips -NVPTX -PowerPC -RISCV -SPIRV -Sparc -SystemZ -VE -WebAssembly -XCore -Xtensa" RUST_SYSROOTS="-bpf -wasm" 3 KiB
+
+Total: 2 packages (2 new), Size of downloads: 233355 KiB
+>>> Verifying ebuild manifests
+
+>>> Running pre-merge checks for dev-lang/rust-1.95.0
+ [32m*[0m Checking for at least 9856 MiB disk space at "/var/tmp/portage/dev-lang/rust-1.95.0/temp" ...
+[A[72C [34;01m[ [32;01mok[34;01m ][0m
+>>> Jobs: 0 of 2 complete, 1 running                                    Load avg: 0.21, 0.12, 0.04
+>>> Emerging (1 of 2) dev-lang/rust-common-1.95.0::gentoo
+>>> Jobs: 0 of 2 complete, 1 running                                    Load avg: 0.21, 0.12, 0.04
+>>> Jobs: 0 of 2 complete                                               Load avg: 0.56, 0.21, 0.08
+>>> Installing (1 of 2) dev-lang/rust-common-1.95.0::gentoo
+>>> Jobs: 0 of 2 complete, 1 merge wait                                 Load avg: 0.56, 0.21, 0.08
+>>> Completed (1 of 2) dev-lang/rust-common-1.95.0::gentoo
+>>> Jobs: 0 of 2 complete                                               Load avg: 0.60, 0.22, 0.08
+>>> Jobs: 1 of 2 complete                                               Load avg: 0.60, 0.22, 0.08
+>>> Jobs: 1 of 2 complete, 1 running                                    Load avg: 0.60, 0.22, 0.08
+>>> Emerging (2 of 2) dev-lang/rust-1.95.0::gentoo
+>>> Jobs: 1 of 2 complete, 1 running                                    Load avg: 0.60, 0.22, 0.08
+>>> Jobs: 1 of 2 complete                                               Load avg: 1.74, 3.81, 5.41
+>>> Installing (2 of 2) dev-lang/rust-1.95.0::gentoo
+>>> Jobs: 1 of 2 complete, 1 merge wait                                 Load avg: 1.74, 3.81, 5.41
+>>> Recording dev-lang/rust in "world" favorites file...
+>>> Jobs: 1 of 2 complete                                               Load avg: 1.75, 3.68, 5.33
+>>> Completed (2 of 2) dev-lang/rust-1.95.0::gentoo
+>>> Jobs: 1 of 2 complete                                               Load avg: 1.75, 3.68, 5.33
+>>> Jobs: 2 of 2 complete                                               Load avg: 1.75, 3.68, 5.33
+
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 5 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+RUST_RC=0

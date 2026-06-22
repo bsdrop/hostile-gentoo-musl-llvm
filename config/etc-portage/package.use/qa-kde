@@ -1,0 +1,24 @@
+# full KDE (user request): flip -kde -qt6 for the desktop stack. elogind unbuildable on musl ->
+# rely on seatd; drop fontconfig on plasma-workspace to avoid REQUIRED_USE fontconfig?(X).
+*/*  qt6
+kde-plasma/plasma-workspace  -fontconfig -policykit
+kde-plasma/kwin  lock
+dev-libs/xerces-c  icu
+sys-apps/dbus      X
+dev-libs/libei -elogind
+x11-libs/libxkbcommon X
+media-libs/mesa X
+kde-frameworks/kwindowsystem X
+# Decision A: enable X across the whole KDE/Qt stack (XWayland/KX11Extras). No xorg-server with -test.
+dev-qt/*          X
+kde-frameworks/*  X
+kde-plasma/*      X
+kde-apps/*        X
+net-misc/networkmanager  -elogind
+app-text/xmlto           text
+media-libs/libepoxy      X
+media-libs/libglvnd      X
+sys-libs/zlib            minizip
+dev-qt/qtbase:6 X cups libproxy opengl icu
+dev-qt/qt5compat   icu
+x11-base/xwayland  libei

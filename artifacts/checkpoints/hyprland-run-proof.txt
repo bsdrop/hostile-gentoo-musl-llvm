@@ -1,0 +1,4 @@
+=== Hyprland 0.55.4 RUN PROOF (virtio-gpu DRM, kms_swrast) ===
+wayland socket: /run/user/0/wayland-1 created
+hyprctl monitors -> Monitor Virtual-1 1280x800@75 backend drm
+built with -O3 + CET + full-LTO + stack-clash + auto-var-init + zero-call-regs, musl/clang22

@@ -161,3 +161,99 @@ Each entry: what, why, scope (global value preserved?), bug-report relevance.
   iproute2 is the actual networking tool.
 - Reportable: net-tools-2.10 unconditionally needs linux/rose.h which newer kernels omit; ebuild
   has no USE/toggle to disable ROSE.
+
+## E18. Hyprland: XWayland off (-X); libXcursor X11 client libs unavoidable
+- Hyprland from the third-party `hyproverlay` (not in ::gentoo/GURU). Built with global USE `-X`,
+  so the `X` USE (XWayland) is OFF -> no x11-base/xwayland, no xorg-server. Pure Wayland.
+- Hyprland *unconditionally* RDEPENDs x11-libs/libXcursor (cursor themes), which pulls libX11/
+  libXrender/libXfixes (X11 CLIENT libraries only — no X server, no XWayland). This is the briefing's
+  allowed "X11 only where a specific dep forces it" case. Documented, not a global X11 enable.
+- Built with FEATURES=-test (command-scoped, E11) to avoid the libepoxy/libglvnd[test,X]->xorg-server
+  test cascade. ~70 pkgs under -O3+CET+full-LTO+hardening.
+
+## E14-UPDATE. elogind on musl: 2 blockers (struct stat include FIXED; gshadow.h HARD)
+- (1) src/libelogind/sd-journal/journal-file.h used `struct stat` without <sys/stat.h> -> fixed by
+  /etc/portage/patches/sys-auth/elogind/0001-musl-sys-stat.patch (musl needs the explicit include).
+- (2) Next: src/shared/user-record-nss.h includes <gshadow.h> -> musl provides NO gshadow API
+  (glibc-only: struct sgrp, getsgnam, etc.). Not a missing-include; the functionality is absent on
+  musl. Requires invasive source surgery to #ifdef-out gshadow usage. => elogind remains a HARD
+  musl build blocker. Consequence: mutter[wayland] REQUIRED_USE wayland?(exactly-one-of(elogind
+  systemd)) cannot be satisfied on musl (systemd prohibited) -> GNOME-on-Wayland is blocked.
+
+## E19 / FINDING: GNOME is BLOCKED on this config (documented failure, not pursued)
+- GNOME 49 stack (gnome-shell/gdm/gnome-session/gnome-control-center/settings-daemon) hard-requires:
+  (a) **elogind** across the whole session stack (gdm, gnome-session, accountsservice, dbus,
+      pambase, networkmanager, udisks, libei...) -> elogind is UNBUILDABLE on musl (E14: gshadow.h).
+      systemd is prohibited. So the logind requirement cannot be met. PRIMARY BLOCKER.
+  (b) **X11**: gtk4[X], gtk+3[X], mesa[X], cairo[X], libepoxy[X], libxkbcommon[X], vulkan-loader[X]
+      -> would violate the no-X11 constraint (and not just XWayland — full X client/server stack).
+  (c) **PulseAudio**: media-sound/pulseaudio-daemon + libcanberra[pulseaudio] + alsa-plugins[pulseaudio]
+      -> would violate the PipeWire-not-PulseAudio constraint.
+  Plus dev-cpp/abseil-cpp slot conflict and media-libs/harfbuzz[icu] keyword mask.
+- The user's "-X vs XWayland" comparison is moot: the blocker is logind/PulseAudio, independent of the
+  display protocol. Mutter alone can build X-only (xwayland force overridden), but the GNOME session
+  cannot exist without elogind.
+- Decision: NOT pursued — making GNOME build would require abandoning three hard constraints
+  (no-X11, no-PulseAudio, no-systemd/elogind-musl). Recorded as a high-value failure artifact.
+
+## E20 / FINDING: Firefox (Firefox-family browser) — feasible on Wayland, but pulls gcc+nodejs
+- www-client/firefox-152.0 resolves cleanly under our constraints: USE="wayland -X -pulseaudio
+  hardened (clang) selinux", gtk+3[wayland -X]. No X server, no PulseAudio. Uses LLVM slot 21
+  (both clang:21 and clang:22 are installed). Good Firefox-family target.
+- BUT its BDEPEND tree pulls sys-devel/gcc-16 (via net-libs/nodejs and/or dev-lang/rust) onto the
+  otherwise clang-only system (soft-blocks llvm-runtimes/libgcc). gcc gets INSTALLED but the default
+  CC/CXX remain clang/clang++ (no global toolchain switch) -> permitted, documented. ~multi-hour
+  build (gcc+nodejs+rust+ffmpeg+gtk3+firefox 779MB src); full-LTO link is RAM-heavy (OOM risk @16G).
+- Mullvad Browser / Tor Browser are distributed as glibc binaries (bin packages) -> will NOT run on
+  musl; firefox-from-source is the representative Firefox-family build here.
+
+## E16-FIX: removed -Wl,--icf=safe from global LDFLAGS (lld-only; breaks GNU-ld builds)
+- The E16 hardening escalation added -Wl,--icf=safe to LDFLAGS. `--icf` is an lld/gold-only option;
+  GNU ld (binutils) rejects it ("unrecognized option '--icf=safe'"). sys-devel/gcc-16 bootstrap links
+  libgcc_s.so with GNU ld (gcc's internal collect2 uses binutils ld, not the system LD=ld.lld), so gcc
+  FAILED -> dropped nodejs -> dropped firefox. FINDING: an lld-only flag in global LDFLAGS breaks any
+  package that links via GNU ld (notably the gcc bootstrap). Fix: drop --icf=safe globally (kept
+  -z,noexecstack/-z,separate-code which both linkers accept). Prior snapshots built fine because all
+  other pkgs used lld; only gcc uses GNU ld internally.
+
+## E20-FINDING: firefox fails on musl — static rust-bin can't dlopen libclang (bindgen)
+- firefox-152.0 builds gcc-16/nodejs/rust-bin/l10n + configures (libclang found), but `mach build`
+  dies in a rust build-script: bindgen panics at lib.rs:615 "Unable to find libclang: ...
+  libclang.so.21.1.8 could not be opened: **Dynamic loading not supported**".
+- Root cause: the toolchain pulled `dev-lang/rust-bin` which is a **statically-linked musl** rustc;
+  static musl binaries cannot `dlopen()`. bindgen dlopens libclang at runtime -> fails. Classic
+  musl + static-rust + bindgen gotcha. Affects ANY bindgen-using package built with static rust-bin.
+- FIX (deferred): build dev-lang/rust from SOURCE (dynamically linked rustc) so dlopen works; that
+  also unblocks the rust backlog (niri/cosmic/etc.) and other bindgen consumers. ~1.5-3h build.
+- Status: firefox deferred until source rust is built (P1 foundation). Not a constraint weakening.
+
+## E20-FINDING (cont.): firefox musl path = dynamic rust MATCHED to firefox's LLVM slot (21)
+- After making dev-lang/rust (source, dynamic) the active rust, firefox STILL failed bindgen dlopen,
+  because firefox pins rust to its LLVM slot: firefox-152 wants LLVM_SLOT=21, but the source rust we
+  built is LLVM_SLOT=22 -> firefox falls back to a static rust / wants rust@21. Removing rust-bin made
+  emerge schedule dev-lang/rust-1.94.1[LLVM_SLOT=21] (a ~1h source build) before firefox.
+- So a working firefox-on-musl needs: dev-lang/rust (SOURCE, dynamic) built against the SAME LLVM slot
+  firefox selects (21). Path is clear but ~3-4h (rust@21 + firefox). DEFERRED (browsers = "나중에";
+  KDE is the decided priority). Will resume firefox after KDE/enforcing.
+
+## E14-COROLLARY: global -elogind (elogind unbuildable on musl; was in briefing USE)
+- The briefing USE included `elogind`. But sys-auth/elogind does not build on musl (E14: gshadow.h).
+  Keeping `elogind` in global USE makes every package with an elogind USE flag (huge across KDE:
+  polkit/accountsservice/udisks/networkmanager/switcheroo/libei/...) try to pull the unbuildable
+  elogind. So switched global USE to `-elogind`; seatd provides seat management. Documented deviation
+  forced by the musl elogind blocker. (Per-package -elogind was used earlier; now global for the KDE tree.)
+
+## E22 / FINDING: KDE Plasma BLOCKED on musl (logind wall, same root as GNOME)
+- Attempted full Plasma (kde-plasma/plasma-desktop) with X enabled for the KDE/Qt stack (decision A).
+- Resolved 277 pkgs after many fixes: enable qt6 + X across dev-qt/kde, qtbase[X,icu,opengl,cups,libproxy],
+  xerces-c[icu] (musl REQUIRED_USE elibc_musl?(icu)), libxkbcommon/mesa/libepoxy/libglvnd[X], -test
+  (else libglvnd[test,X] pulls xorg-server[xvfb]); -policykit on plasma-workspace dropped accountsservice
+  (which needs ^^(elogind systemd)).
+- HARD BLOCKER: kde-plasma/plasma-workspace UNCONDITIONALLY deps kde-frameworks/networkmanager-qt,
+  which hard-deps net-misc/networkmanager[elogind]; elogind is unbuildable on musl (E14), systemd
+  prohibited. No USE flag drops networkmanager-qt from plasma-workspace -> KDE core cannot build.
+- Same fundamental logind entanglement as GNOME (E19), reached via a deeper chain. NOTE (better than
+  GNOME on one axis): with -test, KDE needs only X CLIENT libs + XWayland, NOT a full xorg-server.
+- To unblock BOTH GNOME and KDE one would need a working musl elogind (port around gshadow) or systemd.
+- Global config from the attempt kept: `-elogind` (elogind unbuildable anyway), `*/* qt6`, KDE/Qt X flags
+  (inert unless KDE/qt installed). Documented.

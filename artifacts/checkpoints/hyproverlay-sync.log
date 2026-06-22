@@ -1,0 +1,17 @@
+>>> Syncing repository 'hyproverlay' into '/var/db/repos/hyproverlay'...
+/usr/bin/git clone --depth 1 https://codeberg.org/hyproverlay/hyproverlay.git .
+Cloning into '.'...
+=== Sync completed for hyproverlay
+
+ * IMPORTANT: 5 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+
+Action: sync for repo: hyproverlay, returned code = 0
+
+
+HYPRO_SYNC_RC=0

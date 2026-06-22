@@ -1,0 +1,128 @@
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+
+
+These are the packages that would be merged, in order:
+
+Calculating dependencies  ... done!
+Dependency resolution took 0.90 s (backtrack: 0/20).
+
+[ebuild  N     ] acct-group/cuse-0::gentoo  0 KiB
+[ebuild  N     ] dev-libs/inih-62::gentoo  USE="-test" 22 KiB
+[ebuild  N     ] sys-libs/basu-0.2.1::gentoo  USE="-audit -caps" 234 KiB
+[ebuild  N     ] sec-policy/selinux-bubblewrap-2.20260312_p1::gentoo  SELINUX_POLICY_TYPES="mcs mls strict targeted" 0 KiB
+[ebuild  N     ] dev-libs/json-glib-1.10.8::gentoo  USE="introspection nls -gtk-doc -test" 1264 KiB
+[ebuild  N     ] sys-apps/bubblewrap-0.11.2-r1::gentoo  USE="selinux -suid" 114 KiB
+[ebuild  N     ] sys-fs/fuse-common-3.10.4-r3::gentoo  2723 KiB
+[ebuild  N     ] sys-fs/fuse-3.18.2:3/4::gentoo  USE="suid -io-uring (-systemtap) (-test)" 4819 KiB
+[ebuild  N     ] sys-apps/xdg-desktop-portal-1.20.4-r1::gentoo  USE="seccomp -flatpak -geolocation -gstreamer -systemd -test -udev" 1201 KiB
+[ebuild  N     ] gui-libs/xdg-desktop-portal-wlr-0.8.1::gentoo  USE="-elogind -systemd -verify-sig" 44 KiB
+
+Total: 10 packages (10 new), Size of downloads: 10418 KiB
+>>> Verifying ebuild manifests
+
+>>> Running pre-merge checks for acct-group/cuse-0
+>>> Jobs: 0 of 10 complete, 1 running                                   Load avg: 0.58, 0.48, 0.19
+>>> Emerging (1 of 10) acct-group/cuse-0::gentoo
+>>> Jobs: 0 of 10 complete, 1 running                                   Load avg: 0.58, 0.48, 0.19
+>>> Jobs: 0 of 10 complete, 2 running                                   Load avg: 0.58, 0.48, 0.19
+>>> Emerging (2 of 10) dev-libs/inih-62::gentoo
+>>> Jobs: 0 of 10 complete, 2 running                                   Load avg: 0.58, 0.48, 0.19
+>>> Jobs: 0 of 10 complete, 1 running                                   Load avg: 0.78, 0.52, 0.21
+>>> Jobs: 0 of 10 complete, 2 running, 1 merge wait                     Load avg: 0.78, 0.52, 0.21
+>>> Emerging (3 of 10) sys-libs/basu-0.2.1::gentoo
+>>> Jobs: 0 of 10 complete, 2 running, 1 merge wait                     Load avg: 0.78, 0.52, 0.21
+>>> Jobs: 0 of 10 complete, 1 running, 1 merge wait                     Load avg: 0.78, 0.52, 0.21
+>>> Jobs: 0 of 10 complete, 2 running, 2 merge wait                     Load avg: 0.78, 0.52, 0.21
+>>> Emerging (4 of 10) sec-policy/selinux-bubblewrap-2.20260312_p1::gentoo
+>>> Jobs: 0 of 10 complete, 2 running, 2 merge wait                     Load avg: 0.78, 0.52, 0.21
+>>> Jobs: 0 of 10 complete, 1 running, 2 merge wait                     Load avg: 1.56, 0.71, 0.28
+>>> Jobs: 0 of 10 complete, 2 running, 3 merge wait                     Load avg: 1.56, 0.71, 0.28
+>>> Emerging (5 of 10) dev-libs/json-glib-1.10.8::gentoo
+>>> Jobs: 0 of 10 complete, 2 running, 3 merge wait                     Load avg: 1.56, 0.71, 0.28
+>>> Jobs: 0 of 10 complete, 1 running, 3 merge wait                     Load avg: 1.56, 0.71, 0.28
+>>> Jobs: 0 of 10 complete, 4 merge wait                                Load avg: 1.63, 0.75, 0.30
+>>> Installing (1 of 10) acct-group/cuse-0::gentoo
+>>> Jobs: 0 of 10 complete, 5 merge wait                                Load avg: 1.63, 0.75, 0.30
+>>> Installing (2 of 10) dev-libs/inih-62::gentoo
+>>> Jobs: 0 of 10 complete, 5 merge wait                                Load avg: 1.63, 0.75, 0.30
+>>> Completed (1 of 10) acct-group/cuse-0::gentoo
+>>> Jobs: 0 of 10 complete                                              Load avg: 1.63, 0.75, 0.30
+>>> Installing (3 of 10) sys-libs/basu-0.2.1::gentoo
+>>> Jobs: 0 of 10 complete                                              Load avg: 1.63, 0.75, 0.30
+>>> Jobs: 1 of 10 complete                                              Load avg: 1.63, 0.75, 0.30
+>>> Completed (2 of 10) dev-libs/inih-62::gentoo
+>>> Jobs: 1 of 10 complete                                              Load avg: 1.63, 0.75, 0.30
+>>> Installing (4 of 10) sec-policy/selinux-bubblewrap-2.20260312_p1::gentoo
+>>> Jobs: 1 of 10 complete                                              Load avg: 1.63, 0.75, 0.30
+>>> Jobs: 2 of 10 complete                                              Load avg: 1.63, 0.75, 0.30
+>>> Completed (3 of 10) sys-libs/basu-0.2.1::gentoo
+>>> Jobs: 2 of 10 complete                                              Load avg: 1.66, 0.77, 0.30
+>>> Jobs: 3 of 10 complete                                              Load avg: 1.66, 0.77, 0.30
+>>> Installing (5 of 10) dev-libs/json-glib-1.10.8::gentoo
+>>> Jobs: 3 of 10 complete                                              Load avg: 1.66, 0.77, 0.30
+>>> Completed (4 of 10) sec-policy/selinux-bubblewrap-2.20260312_p1::gentoo
+>>> Jobs: 3 of 10 complete                                              Load avg: 1.68, 0.79, 0.31
+>>> Jobs: 4 of 10 complete                                              Load avg: 1.68, 0.79, 0.31
+>>> Completed (5 of 10) dev-libs/json-glib-1.10.8::gentoo
+>>> Jobs: 4 of 10 complete                                              Load avg: 1.68, 0.79, 0.31
+>>> Jobs: 5 of 10 complete                                              Load avg: 1.68, 0.79, 0.31
+>>> Jobs: 5 of 10 complete, 1 running                                   Load avg: 1.68, 0.79, 0.31
+>>> Emerging (6 of 10) sys-apps/bubblewrap-0.11.2-r1::gentoo
+>>> Jobs: 5 of 10 complete, 1 running                                   Load avg: 1.68, 0.79, 0.31
+>>> Jobs: 5 of 10 complete, 2 running                                   Load avg: 1.68, 0.79, 0.31
+>>> Emerging (7 of 10) sys-fs/fuse-common-3.10.4-r3::gentoo
+>>> Jobs: 5 of 10 complete, 2 running                                   Load avg: 1.68, 0.79, 0.31
+>>> Jobs: 5 of 10 complete, 1 running                                   Load avg: 1.71, 0.81, 0.32
+>>> Jobs: 5 of 10 complete, 1 merge wait                                Load avg: 1.65, 0.81, 0.33
+>>> Installing (7 of 10) sys-fs/fuse-common-3.10.4-r3::gentoo
+>>> Jobs: 5 of 10 complete, 2 merge wait                                Load avg: 1.65, 0.81, 0.33
+>>> Installing (6 of 10) sys-apps/bubblewrap-0.11.2-r1::gentoo
+>>> Jobs: 5 of 10 complete, 2 merge wait                                Load avg: 1.65, 0.81, 0.33
+>>> Completed (7 of 10) sys-fs/fuse-common-3.10.4-r3::gentoo
+>>> Jobs: 5 of 10 complete                                              Load avg: 1.65, 0.81, 0.33
+>>> Jobs: 6 of 10 complete                                              Load avg: 1.65, 0.81, 0.33
+>>> Completed (6 of 10) sys-apps/bubblewrap-0.11.2-r1::gentoo
+>>> Jobs: 6 of 10 complete                                              Load avg: 1.65, 0.81, 0.33
+>>> Jobs: 7 of 10 complete                                              Load avg: 1.65, 0.81, 0.33
+>>> Jobs: 7 of 10 complete, 1 running                                   Load avg: 1.65, 0.81, 0.33
+>>> Emerging (8 of 10) sys-fs/fuse-3.18.2::gentoo
+>>> Jobs: 7 of 10 complete, 1 running                                   Load avg: 1.65, 0.81, 0.33
+>>> Jobs: 7 of 10 complete                                              Load avg: 1.55, 0.82, 0.33
+>>> Installing (8 of 10) sys-fs/fuse-3.18.2::gentoo
+>>> Jobs: 7 of 10 complete, 1 merge wait                                Load avg: 1.55, 0.82, 0.33
+>>> Completed (8 of 10) sys-fs/fuse-3.18.2::gentoo
+>>> Jobs: 7 of 10 complete                                              Load avg: 1.55, 0.82, 0.33
+>>> Jobs: 8 of 10 complete                                              Load avg: 1.55, 0.82, 0.33
+>>> Jobs: 8 of 10 complete, 1 running                                   Load avg: 1.55, 0.82, 0.33
+>>> Emerging (9 of 10) sys-apps/xdg-desktop-portal-1.20.4-r1::gentoo
+>>> Jobs: 8 of 10 complete, 1 running                                   Load avg: 1.55, 0.82, 0.33
+>>> Jobs: 8 of 10 complete                                              Load avg: 1.94, 0.96, 0.39
+>>> Installing (9 of 10) sys-apps/xdg-desktop-portal-1.20.4-r1::gentoo
+>>> Jobs: 8 of 10 complete, 1 merge wait                                Load avg: 1.94, 0.96, 0.39
+>>> Completed (9 of 10) sys-apps/xdg-desktop-portal-1.20.4-r1::gentoo
+>>> Jobs: 8 of 10 complete                                              Load avg: 1.94, 0.96, 0.39
+>>> Jobs: 9 of 10 complete                                              Load avg: 1.94, 0.96, 0.39
+>>> Jobs: 9 of 10 complete, 1 running                                   Load avg: 1.94, 0.96, 0.39
+>>> Emerging (10 of 10) gui-libs/xdg-desktop-portal-wlr-0.8.1::gentoo
+>>> Jobs: 9 of 10 complete, 1 running                                   Load avg: 1.94, 0.96, 0.39
+>>> Jobs: 9 of 10 complete                                              Load avg: 1.80, 0.96, 0.40
+>>> Installing (10 of 10) gui-libs/xdg-desktop-portal-wlr-0.8.1::gentoo
+>>> Jobs: 9 of 10 complete, 1 merge wait                                Load avg: 1.80, 0.96, 0.40
+>>> Recording gui-libs/xdg-desktop-portal-wlr in "world" favorites file...
+>>> Jobs: 9 of 10 complete                                              Load avg: 1.80, 0.96, 0.40
+>>> Completed (10 of 10) gui-libs/xdg-desktop-portal-wlr-0.8.1::gentoo
+>>> Jobs: 9 of 10 complete                                              Load avg: 1.80, 0.96, 0.40
+>>> Jobs: 10 of 10 complete                                             Load avg: 1.80, 0.96, 0.40
+
+
+ * GNU info directory index is up-to-date.
+
+ * IMPORTANT: 5 config files in '/etc' need updating.
+ * See the CONFIGURATION FILES and CONFIGURATION FILES UPDATE TOOLS
+ * sections of the emerge man page to learn how to update config files.
+
+ * IMPORTANT: 25 news items need reading for repository 'gentoo'.
+ * Use eselect news read to view new items.
+

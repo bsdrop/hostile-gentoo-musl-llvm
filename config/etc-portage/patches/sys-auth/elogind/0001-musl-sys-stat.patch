@@ -1,0 +1,10 @@
+--- a/src/libelogind/sd-journal/journal-file.h	2026-06-21 23:27:30.280350078 +0000
++++ b/src/libelogind/sd-journal/journal-file.h	2026-06-21 23:27:30.281821618 +0000
+@@ -3,6 +3,7 @@
+ 
+ #include <fcntl.h>
+ #include <inttypes.h>
++#include <sys/stat.h>
+ //#include <sys/uio.h>
+ 
+ #if HAVE_GCRYPT

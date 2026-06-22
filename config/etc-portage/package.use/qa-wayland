@@ -3,3 +3,6 @@ sys-auth/seatd          server -elogind
 media-video/pipewire    -elogind
 media-video/wireplumber -elogind
 sys-auth/polkit         -elogind
+media-libs/freetype harfbuzz
+gui-libs/xdg-desktop-portal-wlr -elogind
+media-libs/libvpx postproc
