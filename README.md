@@ -95,9 +95,36 @@ builds and runs (using a dynamic source rust at a matching LLVM slot). GNOME and
 musl (logind requirement).
 
 **glibc image (second):** the same hardened/LLVM/OpenRC/SELinux setup without musl. It runs the GNOME
-desktop, Firefox, and Chromium (all verified headless), boots SELinux enforcing with root confined to
-`sysadm_t`, and the AMD GPU driver stack (mesa radeonsi, RADV Vulkan, `xf86-video-amdgpu`) builds (it
-is not run, since the guest has only virtio-gpu).
+desktop, Firefox, and Chromium (all verified headless), builds KDE Plasma, boots SELinux enforcing with
+root confined to `sysadm_t`, and the AMD GPU driver stack (mesa radeonsi, RADV Vulkan,
+`xf86-video-amdgpu`) builds (it is not run, since the guest has only virtio-gpu).
+
+## What worked / what failed
+
+Worked, on both images: the full hardened toolchain (full LTO, `-O3`, CET, stack-clash,
+auto-var-init, zero-call-regs, FORTIFY=3, RELRO/BIND_NOW); a clang **KCFI + LTO** kernel; **SELinux
+enforcing** with root confined to `sysadm_t`; OpenRC with no systemd; Wayland/PipeWire/seatd with no
+X11 and no PulseAudio. The clang/LLVM/lld toolchain rebuilt itself under full LTO.
+
+Worked, musl only: Hyprland and sway (wlroots compositors via seatd); Firefox (with a dynamic source
+rust at a matching LLVM slot); mpv, GStreamer, Lua, LuaJIT, yt-dlp, zig, and nim all build and run.
+
+Worked, glibc only: GNOME (runs headless), Firefox and Chromium (render headless), KDE Plasma (builds;
+`kwin_wayland` starts as a compositor), and the AMD GPU driver stack (builds).
+
+Failed or blocked:
+
+- **GNOME and KDE on musl** — both require logind, and elogind does not build on musl (`gshadow.h`)
+  while systemd is prohibited. Both build on glibc, which isolates logind as the only cause.
+- **`FEATURES=test`** — the dominant friction throughout: it reintroduces X11 on a no-X11 target and
+  produces unsatisfiable `REQUIRED_USE`/cycles. Kept global; handled with narrow per-package exceptions.
+- **`-Wl,--icf=safe`** (lld-only) broke the gcc bootstrap (gcc links libgcc with GNU ld); removed.
+- **net-tools** failed on a missing kernel UAPI header (`linux/rose.h`); fixed by disabling ROSE.
+- **Firefox under enforcing** — SELinux denies its content sandbox's user-namespace layer (degraded,
+  not a failure). **kwin headless rendering** fails in QEMU (no working KMS for its virtual backend);
+  an environment limit, not a build failure.
+
+Full detail in [docs/08-findings.md](docs/08-findings.md) and [docs/07-exceptions.md](docs/07-exceptions.md).
 
 The largest single source of breakage in both images is global `FEATURES=test`; see
 [docs/08-findings.md](docs/08-findings.md).
