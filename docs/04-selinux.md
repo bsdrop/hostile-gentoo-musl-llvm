@@ -52,7 +52,7 @@ enforcing" below).
 
 With `openrc[selinux]`, `sysvinit[selinux]`, and the `selinux-openrc` policy module, the policy loads
 automatically at boot (dmesg shows `SELinux: Initializing` and the policy capabilities). The kernel
-side is in `kernel-qa.fragment` (`SECURITY_SELINUX`, `AUDIT`, `CONFIG_LSM=...,selinux`,
+side is in `kernel-base.fragment` (`SECURITY_SELINUX`, `AUDIT`, `CONFIG_LSM=...,selinux`,
 `EXT4_FS_SECURITY`).
 
 ## Reaching enforcing

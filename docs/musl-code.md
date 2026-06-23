@@ -190,7 +190,7 @@ post_src_prepare() {
 }
 ```
 
-## kernel-qa.fragment
+## kernel-base.fragment
 ```
 # kernel config fragment (merged onto `make defconfig` with clang/LLVM=1).
 # Goal: boot a virtio UEFI guest off ext4 root with no initramfs, plus SELinux + hardening.
@@ -217,9 +217,6 @@ CONFIG_VIRTIO_CONSOLE=y
 CONFIG_VIRTIO_BALLOON=y
 CONFIG_VIRTIO_INPUT=y
 CONFIG_SCSI_VIRTIO=y
-CONFIG_NET_9P=y
-CONFIG_NET_9P_VIRTIO=y
-CONFIG_9P_FS=y
 
 # --- block / fs ---
 CONFIG_BLK_DEV=y
@@ -288,9 +285,9 @@ CONFIG_KVM_GUEST=y
 
 ## kernel-hardened.fragment
 ```
-# Hardened kernel fragment v2 — merged ON TOP of kernel-qa.fragment, clang/LLVM build.
+# Hardened kernel fragment v2 — merged ON TOP of kernel-base.fragment, clang/LLVM build.
 # Adds clang-specific + KSPP hardening beyond the base (KASLR/FORTIFY/usercopy/init-on-alloc/
-# slab-hardening/SSP-strong already in kernel-qa.fragment). Build with `make LLVM=1`.
+# slab-hardening/SSP-strong already in kernel-base.fragment). Build with `make LLVM=1`.
 # NOTE: gcc-plugin hardening (STACKLEAK, RANDSTRUCT) is UNAVAILABLE under a clang build — clang has
 # no GCC plugins; we use clang's stronger CFI + kernel LTO instead. See docs/02 + docs/04.
 

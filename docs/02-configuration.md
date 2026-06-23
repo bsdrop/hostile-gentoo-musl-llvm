@@ -1,7 +1,7 @@
 # 02 · Configuration — make.conf, USE, FEATURES, kernel
 
 The configuration that defines this system, with the reason for each choice. The live files are in
-`config/` (`make.conf`, `kernel-qa.fragment`, `kernel-hardened.fragment`, `sysctl-qa-hardening.conf`,
+`config/` (`make.conf`, `kernel-base.fragment`, `kernel-hardened.fragment`, `sysctl-hardening.conf`,
 `etc-portage/`). Per-package overrides are listed in [07-exceptions.md](07-exceptions.md). The values
 below are the final hardened state, not the early bring-up.
 
@@ -58,9 +58,9 @@ clang 22.1.8 ; LLD 22.1.8 ; ldd → "musl libc (x86_64)" ; gcc not installed
 ## Kernel
 
 Built with clang (`make LLVM=1`); config is `make defconfig` plus two fragments merged in order:
-`config/kernel-qa.fragment` (base) and `config/kernel-hardened.fragment` (v2 hardening).
+`config/kernel-base.fragment` (base) and `config/kernel-hardened.fragment` (v2 hardening).
 
-Base fragment (`kernel-qa.fragment`):
+Base fragment (`kernel-base.fragment`):
 
 - virtio built in (`VIRTIO_BLK/PCI/NET/GPU`, `EXT4_FS`, `EFI_STUB`): the root filesystem mounts with no
   initramfs, the simplest reliable boot in QEMU.
@@ -89,7 +89,7 @@ mitigation set: `lockdown=confidentiality`, `mitigations=auto,nosmt`, explicit
 spectre/ssb/l1tf/mds/tsx/mmio/retbleed/gds switches, and `slab_nomerge init_on_alloc=1 init_on_free=1
 randomize_kstack_offset=on pti=on vsyscall=none debugfs=off`.
 
-## Runtime sysctl (`config/sysctl-qa-hardening.conf`)
+## Runtime sysctl (`config/sysctl-hardening.conf`)
 
 Installed as `/etc/sysctl.d/99-hardening.conf` on both images. KSPP-style settings:
 `kernel.kptr_restrict=2`, `dmesg_restrict=1`, `kexec_load_disabled=1`, `unprivileged_bpf_disabled=1`,

@@ -20,7 +20,7 @@ outline.
    the stage3 has no ebuild tree.
 
 5. **Boot tooling and kernel.** `emerge gentoo-sources installkernel grub efibootmgr dosfstools git`,
-   then build the kernel with `make LLVM=1` using `defconfig` plus `kernel-qa.fragment` and
+   then build the kernel with `make LLVM=1` using `defconfig` plus `kernel-base.fragment` and
    `kernel-hardened.fragment` (KCFI, LTO_CLANG, lockdown, KSPP). The kernel is built with clang because
    the LLVM toolchain is the target and the kernel supports `LLVM=1`. No
    initramfs is used because virtio and ext4 are built in, so the root mounts directly. Expect a few

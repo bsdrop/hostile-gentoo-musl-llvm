@@ -4,31 +4,37 @@
 #
 # RUN INSIDE the Gentoo minimal live ISO (booted in QEMU), as root.
 # Assumes the stage3 musl-llvm-openrc tarball + this repository are reachable
-# (here via a 9p mount at /mnt/hostshare). Target disk = /dev/vda.
+# (here via a 9p mount at /mnt/hostshare). Target disk = $DISK (default /dev/vda).
 #
 # This reproduces the FINAL hardened state, not the early bring-up:
 #   full -flto, -O3, CET, stack-clash, auto-var-init, zero-call-regs (E16);
-#   a clang KCFI/LTO hardened kernel (kernel-qa.fragment + kernel-hardened.fragment);
+#   a clang KCFI/LTO hardened kernel (kernel-base.fragment + kernel-hardened.fragment);
 #   KSPP sysctl; SELinux enforcing with root mapped to sysadm_t.
 # The canonical config files live in this repository's config/ directory.
 # Deviations are documented in docs/07-exceptions.md (E1..E22).
 ###############################################################################
 set -euo pipefail
-REPO=/mnt/hostshare                  # this repository, shared into the guest over 9p
+REPO=/mnt/hostshare                  # this repository, made available to the installer
 STAGE3=$REPO/stage3-amd64-musl-llvm-openrc-20260614T170130Z.tar.xz
 G=/mnt/gentoo
 
+# Install target disk. Set DISK for the target hardware
+# (e.g. /dev/sda or /dev/nvme0n1). Defaults to /dev/vda.
+DISK="${DISK:-/dev/vda}"
+P=""; case "$DISK" in *[0-9]) P=p ;; esac   # nvme/loop need a 'p' before the partition number
+ESP="${DISK}${P}1"; SWAP="${DISK}${P}2"; ROOT="${DISK}${P}3"
+
 ############################ 1. partition + format ############################
-sgdisk --zap-all /dev/vda
+sgdisk --zap-all "$DISK"
 sgdisk -n1:0:+512M -t1:ef00 -c1:ESP \
        -n2:0:+8G   -t2:8200 -c2:swap \
-       -n3:0:0     -t3:8300 -c3:root /dev/vda
-mkfs.vfat -F32 -n ESP /dev/vda1
-mkswap -L swap /dev/vda2 && swapon /dev/vda2
-mkfs.ext4 -q -L root /dev/vda3
+       -n3:0:0     -t3:8300 -c3:root "$DISK"
+mkfs.vfat -F32 -n ESP "$ESP"
+mkswap -L swap "$SWAP" && swapon "$SWAP"
+mkfs.ext4 -q -L root "$ROOT"
 
 ############################ 2. unpack stage3 #################################
-mkdir -p $G && mount /dev/vda3 $G
+mkdir -p $G && mount "$ROOT" $G
 tar xpf "$STAGE3" -C $G --xattrs-include='*.*' --numeric-owner
 # profile is already default/linux/amd64/23.0/musl/llvm (clang/lld/llvm-ar set by profile)
 
@@ -38,7 +44,7 @@ mount --types proc /proc $G/proc
 mount --rbind /sys $G/sys;  mount --make-rslave $G/sys
 mount --rbind /dev $G/dev;  mount --make-rslave $G/dev
 mount --bind /run $G/run;   mount --make-slave $G/run
-mkdir -p $G/boot && mount /dev/vda1 $G/boot   # REQUIRED: mount-boot.eclass guard
+mkdir -p $G/boot && mount "$ESP" $G/boot   # REQUIRED: mount-boot.eclass guard
 
 ############################ 4. make.conf + portage overrides ################
 # The full hardened make.conf (full -flto, -O3, CET, stack-clash, auto-var-init,
@@ -66,16 +72,16 @@ ln -sf /usr/share/zoneinfo/UTC $G/etc/localtime
 chroot $G /bin/bash -lc 'emerge --keep-going=y sys-kernel/gentoo-sources sys-kernel/installkernel \
     sys-boot/grub sys-boot/efibootmgr sys-fs/dosfstools sys-apps/diffutils dev-vcs/git'
 chroot $G /bin/bash -lc 'eselect kernel set 1'
-cp $REPO/config/kernel-qa.fragment $REPO/config/kernel-hardened.fragment $G/root/
+cp $REPO/config/kernel-base.fragment $REPO/config/kernel-hardened.fragment $G/root/
 # clang build (LLVM=1); merge the base virtio/SELinux fragment AND the v2 hardened
 # fragment (KCFI: CONFIG_CFI, LTO_CLANG, lockdown LSM, KSPP, IOMMU strict, KFENCE).
 chroot $G /bin/bash -lc 'cd /usr/src/linux && make LLVM=1 defconfig \
-    && ./scripts/kconfig/merge_config.sh -m .config /root/kernel-qa.fragment /root/kernel-hardened.fragment \
+    && ./scripts/kconfig/merge_config.sh -m .config /root/kernel-base.fragment /root/kernel-hardened.fragment \
     && make LLVM=1 olddefconfig && make LLVM=1 -j8 \
     && make LLVM=1 modules_install && make LLVM=1 install'
 
 ############################ 7. fstab + bootloader (hardened cmdline) ########
-# fstab: UUID= for /dev/vda3 (/ ext4), vda1 (/boot vfat), vda2 (swap)
+# fstab: UUID= for $ROOT (/ ext4), $ESP (/boot vfat), $SWAP (swap)
 # /etc/default/grub GRUB_CMDLINE_LINUX: serial console, SELinux LSM, and the full
 # KSPP + CPU-mitigation + lockdown command line:
 #   console=tty0 console=ttyS0,115200 lsm=landlock,lockdown,yama,integrity,selinux,bpf
@@ -89,7 +95,7 @@ chroot $G /bin/bash -lc 'grub-mkconfig -o /boot/grub/grub.cfg'
 
 ############################ 8. sysctl hardening #############################
 # KSPP-style runtime hardening + perf tuning (applies to both images):
-cp $REPO/config/sysctl-qa-hardening.conf $G/etc/sysctl.d/99-hardening.conf
+cp $REPO/config/sysctl-hardening.conf $G/etc/sysctl.d/99-hardening.conf
 
 ############################ 9. services + root + ssh #######################
 echo 'hostname="gentoo-hostile"' > $G/etc/conf.d/hostname

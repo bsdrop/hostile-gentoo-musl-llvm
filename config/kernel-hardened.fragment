@@ -1,6 +1,6 @@
-# Hardened kernel fragment v2 — merged ON TOP of kernel-qa.fragment, clang/LLVM build.
+# Hardened kernel fragment v2 — merged ON TOP of kernel-base.fragment, clang/LLVM build.
 # Adds clang-specific + KSPP hardening beyond the base (KASLR/FORTIFY/usercopy/init-on-alloc/
-# slab-hardening/SSP-strong already in kernel-qa.fragment). Build with `make LLVM=1`.
+# slab-hardening/SSP-strong already in kernel-base.fragment). Build with `make LLVM=1`.
 # NOTE: gcc-plugin hardening (STACKLEAK, RANDSTRUCT) is UNAVAILABLE under a clang build — clang has
 # no GCC plugins; we use clang's stronger CFI + kernel LTO instead. See docs/02 + docs/04.
 

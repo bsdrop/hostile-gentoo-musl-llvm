@@ -30,7 +30,7 @@ Set a root password and start sshd (`/etc/init.d/sshd start`, `PermitRootLogin y
 `scripts/install.sh` is the ordered procedure. It expects the stage3 and this repository reachable at
 `/mnt/hostshare` (the 9p share). It will: partition `/dev/vda`, unpack the stage3, chroot, install
 `config/make.conf` and the `config/etc-portage/` overrides (including the libselinux patch), run
-`emerge-webrsync`, build the clang kernel from `config/kernel-qa.fragment`, install grub, write fstab
+`emerge-webrsync`, build the clang kernel from `config/kernel-base.fragment`, install grub, write fstab
 and services, set up SELinux (permissive at this stage), install Wayland/PipeWire, then switch to full
 LTO.
 

@@ -194,5 +194,5 @@ musl image (complete):
 - Firefox builds and runs (`firefox-152.0`, headless render verified) using a dynamic source rust at
   a matching LLVM slot (F10); under enforcing its content sandbox loses the user-namespace layer.
 
-glibc image (in progress): the same hardened/LLVM/OpenRC/SELinux setup without musl, used to reach the
+glibc image: the same hardened/LLVM/OpenRC/SELinux setup without musl, used to reach the
 GNOME desktop and browsers that the musl logind requirement blocks.
