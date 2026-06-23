@@ -106,8 +106,9 @@ auto-var-init, zero-call-regs, FORTIFY=3, RELRO/BIND_NOW); a clang **KCFI + LTO*
 enforcing** with root confined to `sysadm_t`; OpenRC with no systemd; Wayland/PipeWire/seatd with no
 X11 and no PulseAudio. The clang/LLVM/lld toolchain rebuilt itself under full LTO.
 
-Worked, musl only: Hyprland and sway (wlroots compositors via seatd); Firefox (with a dynamic source
-rust at a matching LLVM slot); mpv, GStreamer, Lua, LuaJIT, yt-dlp, zig, and nim all build and run.
+Worked, musl only: four wlroots compositors (Hyprland, sway, river, wayfire); Firefox (with a dynamic
+source rust at a matching LLVM slot); mpv, GStreamer, Lua, LuaJIT, yt-dlp, zig, nim, and crystal all
+build and run.
 
 Worked, glibc only: GNOME (runs headless), Firefox and Chromium (render headless), KDE Plasma (builds;
 `kwin_wayland` starts as a compositor), and the AMD GPU driver stack (builds).

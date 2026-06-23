@@ -77,8 +77,9 @@ The work proceeded through these snapshots, each taken before the next stage:
 Boot, OpenRC, SSH, networking; the clang/lld toolchain; SELinux enforcing with root confined; Hyprland
 0.55.4 and sway 1.12 (wlroots 0.20.1) both built and launched on virtio-gpu DRM (swrast, no virgl);
 PipeWire, wireplumber, seatd; xdg-desktop-portal and -wlr; Firefox 152.0 (built and renders headless).
-Additional packages built and run: mpv 0.41, GStreamer 1.26, Lua 5.4, LuaJIT 2.1, yt-dlp, zig 0.16,
-nim 2.2. The KCFI hardened kernel boots and enforces.
+The wlroots compositors river 0.4.5 and wayfire 0.10.1 also build. Additional packages built and run:
+mpv 0.41, GStreamer 1.26, Lua 5.4, LuaJIT 2.1, yt-dlp, zig 0.16, nim 2.2, crystal 1.20. The KCFI
+hardened kernel boots and enforces.
 
 ## Summary
 
