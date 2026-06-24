@@ -86,6 +86,10 @@ The live runtime (the running VM, its qcow2 disk and snapshots, and sockets) is 
 10. [docs/09-reproduce.md](docs/09-reproduce.md) — how to reproduce the build from scratch.
 11. [docs/10-final-report-musl.md](docs/10-final-report-musl.md) — final report for the musl image.
 
+Code-only appendices: [docs/musl-code.md](docs/musl-code.md) (musl config: make.conf, USE, kernel,
+patches) and [docs/glibc-code.md](docs/glibc-code.md) (glibc desktop config: the GNOME/KDE/browser
+package.use sets).
+
 ## Status
 
 **musl image (first):** boots with musl, clang/LLD, and OpenRC; SSH works; SELinux is enforcing with
@@ -95,9 +99,11 @@ builds and runs (using a dynamic source rust at a matching LLVM slot). GNOME and
 musl (logind requirement).
 
 **glibc image (second):** the same hardened/LLVM/OpenRC/SELinux setup without musl. It runs the GNOME
-desktop, Firefox, and Chromium (all verified headless), builds KDE Plasma, boots SELinux enforcing with
-root confined to `sysadm_t`, and the AMD GPU driver stack (mesa radeonsi, RADV Vulkan,
-`xf86-video-amdgpu`) builds (it is not run, since the guest has only virtio-gpu).
+desktop (interactively, in a QEMU GTK window — wallpaper, Settings, and a GNOME Shell extension all
+work), Firefox, and Chromium, builds KDE Plasma, boots SELinux enforcing with root confined to
+`sysadm_t`, and the AMD GPU driver stack (mesa radeonsi, RADV Vulkan, `xf86-video-amdgpu`) builds (it
+is not run, since the guest has only virtio-gpu). See [docs/08-findings.md](docs/08-findings.md) F15 for
+the display setup.
 
 ## What worked / what failed
 

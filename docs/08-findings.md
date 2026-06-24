@@ -201,6 +201,32 @@ This also bounds the amdgpu result: the AMD driver stack (mesa radeonsi, RADV, `
 builds under enforcing as well as permissive; only portage's cleanup step is blocked. Its runtime is
 not testable here because the guest has only virtio-gpu, not a real AMD GPU.
 
+## F15 — driving the GNOME desktop interactively in QEMU (glibc)
+
+The GNOME session (and KDE) build and run on glibc, but seeing and using the desktop through QEMU has
+several non-obvious requirements:
+
+- **virtio-gpu must be the only GPU.** QEMU's q35 default adds a `-vga std` adapter; with
+  `-device virtio-gpu-pci` *and* the default VGA present, the guest renders to the wrong adapter and
+  the window stays blank/frozen at the boot framebuffer. Use virtio-gpu-pci as the sole display
+  adapter.
+- **VNC cannot present the GL desktop.** QEMU's VNC server serves the 2D framebuffer console (the GRUB
+  handoff frame), not mutter's GL output, so the desktop never appears over VNC even with virgl/blob
+  enabled. Working options: `-display gtk,gl=on` (host-GPU accelerated) or plain virtio-gpu 2D with
+  `-display gtk` (software-rendered, slower but it presents). SPICE+gl is the other accelerated path,
+  but it needs a SPICE build with a video encoder.
+- **gdm must start at boot, not from a shell.** Launching gdm or a GNOME session from an SSH-as-root
+  session fails because elogind does not allocate a seat in that context (`loginctl list-seats` is
+  empty). Started from the init runlevel at boot, elogind provides `seat0` and gdm autologin brings up
+  a full session.
+- **The wallpaper is JPEG-XL and needs a decoder.** GNOME 49's default background is
+  `/usr/share/backgrounds/gnome/adwaita-*.jxl`. If `x11-themes/gnome-backgrounds` is not installed the
+  file is missing and the shell shows the solid `primary-color` fallback (a blue). With the file
+  present it still does not render unless a JXL loader exists: GNOME loads wallpapers through glycin, so
+  `media-libs/glycin-loaders` must be built with `jpegxl` (and `gnome-backgrounds` pulls
+  `media-libs/libjxl[gdk-pixbuf]` for the gdk-pixbuf path). The package.use for this is in
+  [glibc-code.md](glibc-code.md).
+
 ## Status
 
 Both images snapshot before each stage so a failed stage is recoverable.
