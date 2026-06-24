@@ -179,6 +179,28 @@ Practical posture: run `emerge --sync && glsa-check -t all` on a schedule, apply
 on a real cadence, follow the GLSA feed, and track with `gentoolkit` and `eix`. `config/security-sweep.sh`
 wraps the sync and GLSA report. Report hardening as mitigation, not as a substitute for patching.
 
+## F14 — `emerge` is unreliable under SELinux enforcing: the unmerge phase is denied
+
+Packages compile and install fine under enforcing, but `emerge` fails as a whole when it has to replace
+an already-installed package. Tested by rebuilding `x11-drivers/xf86-video-amdgpu` (part of the amdgpu
+stack) on the glibc image:
+
+- enforcing: the build and install complete (`>>> Completed installing`, the new version is in the
+  `vdb`), then `emerge` exits 1 with
+  `portage.exception.PermissionDenied: stat('/var/tmp/portage/._unmerge_/.../homedir')` during the
+  unmerge of the old version. The denial is dontaudit'd, so no AVC is logged.
+- permissive: the identical command is `rc=0` and clean.
+
+So the targeted/mcs policy does not cover all of portage's operations (here, the recursive
+permission/stat walk of the `._unmerge_` staging area) for portage's domain under enforcing. The
+working practice, used throughout this project, is to **build in permissive and run in enforcing**.
+Resolving it would need a local policy module granting portage access to the unmerge staging paths
+(the same approach as `config/selinux/qa_local.te`). This applies to both images.
+
+This also bounds the amdgpu result: the AMD driver stack (mesa radeonsi, RADV, `xf86-video-amdgpu`)
+builds under enforcing as well as permissive; only portage's cleanup step is blocked. Its runtime is
+not testable here because the guest has only virtio-gpu, not a real AMD GPU.
+
 ## Status
 
 Both images snapshot before each stage so a failed stage is recoverable.
