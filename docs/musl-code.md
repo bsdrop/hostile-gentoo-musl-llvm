@@ -218,15 +218,8 @@ CONFIG_VIRTIO_BALLOON=y
 CONFIG_VIRTIO_INPUT=y
 CONFIG_SCSI_VIRTIO=y
 
-# --- block / fs ---
-CONFIG_BLK_DEV=y
+# --- root filesystem: ext4 must be built-in (no initramfs); other FS come from defconfig ---
 CONFIG_EXT4_FS=y
-CONFIG_VFAT_FS=y
-CONFIG_FAT_DEFAULT_UTF8=y
-CONFIG_NLS_CODEPAGE_437=y
-CONFIG_NLS_ISO8859_1=y
-CONFIG_TMPFS=y
-CONFIG_BTRFS_FS=y
 
 # --- DRM for virtio-gpu / wayland (virgl) ---
 CONFIG_DRM=y
@@ -251,7 +244,6 @@ CONFIG_LSM="landlock,lockdown,yama,integrity,selinux,bpf"
 CONFIG_AUDIT=y
 CONFIG_AUDITSYSCALL=y
 CONFIG_EXT4_FS_SECURITY=y
-CONFIG_BTRFS_FS_POSIX_ACL=y
 
 # extended attrs / labels
 CONFIG_TMPFS_XATTR=y
